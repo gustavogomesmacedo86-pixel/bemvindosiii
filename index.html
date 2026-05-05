@@ -1,1 +1,457 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Niazi Chohfi Telecom | Internet de Verdade</title>
+    <!-- Bootstrap 5 + Icons + CSS custom -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Google Fonts (opcional para estilo) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8fafc;
+            scroll-behavior: smooth;
+        }
+        /* Cores da marca: tons tecnológicos e confiáveis */
+        :root {
+            --primary: #0d6efd;
+            --primary-dark: #0a58ca;
+            --secondary-bg: #ffffff;
+            --accent: #00b4d8;
+            --dark-bg: #0f172a;
+        }
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.7rem;
+            letter-spacing: -0.5px;
+        }
+        .navbar-brand span {
+            color: var(--accent);
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #0a192f 0%, #0f2b3d 100%);
+            color: white;
+            padding: 80px 0;
+            border-radius: 0 0 2rem 2rem;
+            margin-bottom: 2rem;
+        }
+        .hero-title {
+            font-weight: 800;
+            font-size: 3rem;
+            line-height: 1.2;
+        }
+        .btn-outline-custom {
+            border: 2px solid white;
+            background: transparent;
+            color: white;
+            border-radius: 50px;
+            padding: 10px 28px;
+            transition: 0.3s;
+            font-weight: 600;
+        }
+        .btn-outline-custom:hover {
+            background: white;
+            color: #0a192f;
+            transform: translateY(-3px);
+        }
+        .btn-primary-custom {
+            background: var(--accent);
+            border: none;
+            border-radius: 50px;
+            padding: 10px 28px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .btn-primary-custom:hover {
+            background: #0096c7;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .card-service {
+            border: none;
+            border-radius: 1.5rem;
+            transition: all 0.3s ease;
+            background: white;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
+            height: 100%;
+        }
+        .card-service:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px -12px rgba(0,180,216,0.2);
+        }
+        .service-icon {
+            font-size: 2.8rem;
+            color: var(--accent);
+        }
+        .section-title {
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 4px;
+        }
+        .footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            border-top: 3px solid var(--accent);
+        }
+        .footer a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .footer a:hover {
+            color: var(--accent);
+        }
+        .info-block {
+            background: white;
+            border-radius: 1.2rem;
+            padding: 1.5rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            border-left: 5px solid var(--accent);
+        }
+        .contact-info i {
+            width: 32px;
+            font-size: 1.3rem;
+            color: var(--accent);
+        }
+        .badge-cnpj {
+            font-family: monospace;
+            background: #e9ecef;
+            padding: 6px 12px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+        }
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            .hero-section {
+                padding: 50px 0;
+            }
+        }
+    </style>
+</head>
+<body>
 
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top py-2">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">
+            <i class="bi bi-wifi fs-2 me-2" style="color: #00b4d8;"></i> 
+            Niazi<span>Chohfi</span> Telecom
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMain">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+                <li class="nav-item"><a class="nav-link fw-semibold" href="#home">Início</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold" href="#planos">Planos</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold" href="#sobre">Sobre</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold" href="#contato">Contato</a></li>
+            </ul>
+            <a href="#contato" class="btn btn-primary-custom ms-lg-3 text-white">Assine Já</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO / HOME -->
+<section id="home" class="hero-section">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-7">
+                <h1 class="hero-title mb-3">Internet que conecta <br> você ao <span style="color:#00b4d8;">futuro</span></h1>
+                <p class="lead mb-4">Fibra óptica de alta velocidade com estabilidade e suporte local. Experimente a melhor conexão do Parque da Mooca e região!</p>
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="#planos" class="btn btn-primary-custom btn-lg text-white px-4">Conheça os planos <i class="bi bi-arrow-right"></i></a>
+                    <a href="#contato" class="btn btn-outline-custom">Fale com um especialista</a>
+                </div>
+                <div class="mt-4 d-flex gap-4 flex-wrap">
+                    <div><i class="bi bi-trophy-fill fs-4 me-1"></i> <strong>+10 anos</strong> de mercado</div>
+                    <div><i class="bi bi-emoji-smile-fill fs-4 me-1"></i> <strong>98%</strong> de satisfação</div>
+                    <div><i class="bi bi-speedometer2 fs-4 me-1"></i> <strong>Fibra 100%</strong> simétrica</div>
+                </div>
+            </div>
+            <div class="col-lg-5 text-lg-end text-center">
+                <img src="https://placehold.co/500x400/e9f5f9/00b4d8?text=Fibra+Óptica&font=montserrat" alt="Internet Fibra" class="img-fluid rounded-4 shadow-lg" style="max-width: 100%;">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DIFERENCIAIS / ICONES E FRASES -->
+<div class="container py-4">
+    <div class="row text-center g-4">
+        <div class="col-md-4">
+            <div class="p-3">
+                <i class="bi bi-lightning-charge-fill service-icon"></i>
+                <h4 class="mt-3 fw-bold">Ultra Velocidade</h4>
+                <p class="text-secondary">Download e Upload simétricos, ideal para home office, streaming e games.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-3">
+                <i class="bi bi-shield-check service-icon"></i>
+                <h4 class="mt-3 fw-bold">Segurança e Estabilidade</h4>
+                <p class="text-secondary">Rede protegida, baixa latência e conexão dedicada, sem oscilações.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-3">
+                <i class="bi bi-headset service-icon"></i>
+                <h4 class="mt-3 fw-bold">Suporte 24/7</h4>
+                <p class="text-secondary">Atendimento humano e rápido quando você mais precisa, com time local.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PLANOS -->
+<section id="planos" class="py-5 bg-white">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="badge bg-info bg-opacity-10 text-info px-3 py-2 rounded-pill">Nossos Planos</span>
+            <h2 class="section-title mt-2">Escolha o plano ideal para você</h2>
+            <p class="text-secondary">Sem fidelidade absurda e com a melhor tecnologia da região.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card-service p-4 text-center">
+                    <i class="bi bi-wifi service-icon"></i>
+                    <h3 class="fw-bold mt-2">Plano Básico</h3>
+                    <h2 class="display-5 fw-bold text-primary">R$89,90<span class="fs-6">/mês</span></h2>
+                    <hr>
+                    <ul class="list-unstyled text-start mt-3">
+                        <li><i class="bi bi-check-lg text-success me-2"></i> 300 Mega Fibra</li>
+                        <li><i class="bi bi-check-lg text-success me-2"></i> Wi-Fi 6 incluso</li>
+                        <li><i class="bi bi-check-lg text-success me-2"></i> Suporte 24h</li>
+                        <li><i class="bi bi-check-lg text-success me-2"></i> Roteador moderno</li>
+                    </ul>
+                    <a href="#contato" class="btn btn-outline-primary rounded-pill w-100 mt-3 py-2">Quero esse</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-service p-4 text-center border border-info shadow-sm">
+                    <div class="badge bg-info text-white rounded-pill px-3 py-1 mb-2">MAIS ESCOLHIDO</div>
+                    <i class="bi bi-lightbulb-fill service-icon" style="color:#00b4d8;"></i>
+                    <h3 class="fw-bold mt-2">Plano Premium</h3>
+                    <h2 class="display-5 fw-bold text-primary">R$129,90<span class="fs-6">/mês</span></h2>
+                    <hr>
+                    <ul class="list-unstyled text-start mt-3">
+                        <li><i class="bi bi-check-lg text-success me-2"></i> 700 Mega Fibra</li>
+                        <li><i class="bi bi-check-lg text-success me-2"></i> Wi-Fi 6 Mesh</li>
+                        <li><i class="bi bi-check-lg text-success me-2"></i> Atendimento prioritário</li>
+                        <li><i class="bi bi-check-lg text-success me-2"></i> 1 ano de Disney+ incluso*</li>
+                    </ul>
+                    <a href="#contato" class="btn btn-primary-custom w-100 rounded-pill py-2 text-white">Assinar Premium</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-service p-4 text-center">
+                    <i class="bi bi-speedometer2 service-icon"></i>
+                    <h3 class="fw-bold mt-2">Plano Gamer</h3>
+                    <h2 class="display-5 fw-bold text-primary">R$169,90<span class="fs-6">/mês</span></h2>
+                    <hr>
+                    <ul class="list-unstyled text-start mt-3">
+                        <li><i class="bi bi-check-lg text-success me-2"></i> 1 Giga (1000 Mega)</li>
+                        <li><i class="bi bi-check-lg text-success me-2"></i> Roteador gamer + cabo</li>
+                        <li><i class="bi bi-check-lg text-success me-2"></i> Ping ultra baixo</li>
+                        <li><i class="bi bi-check-lg text-success me-2"></i> Suporte avançado 24/7</li>
+                    </ul>
+                    <a href="#contato" class="btn btn-outline-primary rounded-pill w-100 mt-3 py-2">Garantir Mega</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SOBRE + INFORMAÇÕES DA EMPRESA (CNPJ, DATA, ENDEREÇO) -->
+<section id="sobre" class="py-5 bg-light">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6">
+                <span class="badge bg-secondary bg-opacity-10 text-secondary py-2 px-3 mb-2 rounded-pill"><i class="bi bi-building"></i> Sobre nós</span>
+                <h2 class="fw-bold mb-3">Mais de uma década conectando São Paulo</h2>
+                <p class="lead text-secondary">A <strong>Niazi Chohfi Textil Ltda.</strong>, desde sua fundação, se reinventou e hoje é referência em <strong>provedor de internet</strong> de alta performance na capital paulista.</p>
+                <div class="info-block mt-4">
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <i class="bi bi-calendar-check-fill me-2" style="color:#00b4d8;"></i> <strong>Data Situação Cadastral:</strong><br> 08/01/2013
+                        </div>
+                        <div class="col-sm-6">
+                            <i class="bi bi-qr-code-scan me-2"></i> <strong>CNPJ:</strong><br> <span class="badge-cnpj d-inline-block mt-1">06.976.612/0005-24</span>
+                        </div>
+                        <div class="col-12">
+                            <i class="bi bi-geo-alt-fill me-2" style="color:#00b4d8;"></i> <strong>Endereço Matriz:</strong><br>
+                            Rua Cadiriri, 629 - Parque da Mooca, São Paulo - SP, 03109-040
+                        </div>
+                        <div class="col-12">
+                            <i class="bi bi-telephone-fill me-2"></i> <strong>Central de Relacionamento:</strong><br> (11) 3312-3312
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-4 text-secondary">Orgulhosamente parte do bairro da Mooca, entregamos qualidade, transparência e compromisso com a comunidade local. Nossa missão é transformar a experiência digital de residências e empresas.</p>
+            </div>
+            <div class="col-lg-6">
+                <div class="position-relative">
+                    <div class="bg-white p-4 rounded-4 shadow-sm">
+                        <i class="bi bi-trophy fs-1 text-warning"></i>
+                        <h4 class="mt-2">Certificação de Qualidade</h4>
+                        <p>Reconhecidos pelo excelente índice de satisfação e menor taxa de inadimplência técnica da região. Mais de 5 mil clientes satisfeitos.</p>
+                        <div class="d-flex gap-3 mt-3">
+                            <div><i class="bi bi-star-fill text-warning"></i> <i class="bi bi-star-fill text-warning"></i> <i class="bi bi-star-fill text-warning"></i> <i class="bi bi-star-fill text-warning"></i> <i class="bi bi-star-fill text-warning"></i></div>
+                            <span class="fw-semibold">4.9/5 (Google Avaliações)</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <img src="https://placehold.co/500x200/e2e8f0/0f172a?text=Fibra+Niazi+Chohfi" class="img-fluid rounded-3" alt="Mapa Mooca">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ÁREA DE COBERTURA + FRASES ATRAENTES -->
+<div class="container py-5">
+    <div class="row bg-white rounded-4 p-4 shadow-sm align-items-center">
+        <div class="col-md-8">
+            <h3><i class="bi bi-broadcast me-2" style="color: #00b4d8;"></i> Cobertura total no Parque da Mooca e regiões próximas</h3>
+            <p>Estamos expandindo nossa rede de fibra óptica e já atendemos com excelência na Mooca, Vila Prudente, Ipiranga e entorno. Solicite uma visita técnica sem compromisso.</p>
+            <span class="badge bg-light text-dark p-2"> ✅ Ativação rápida em até 48h </span>
+            <span class="badge bg-light text-dark p-2 ms-2"> ✅ Sem fidelidade obrigatória</span>
+        </div>
+        <div class="col-md-4 text-md-end">
+            <a href="#contato" class="btn btn-primary-custom text-white">Verificar disponibilidade</a>
+        </div>
+    </div>
+</div>
+
+<!-- CONTATO + MAPA / FORMULÁRIO RÁPIDO -->
+<section id="contato" class="py-5 bg-white">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-5">
+                <h2 class="fw-bold mb-3">Fale com a gente</h2>
+                <p>Estamos prontos para te atender, tirar dúvidas e oferecer a melhor solução para a sua casa ou empresa.</p>
+                <div class="contact-info mt-4">
+                    <p><i class="bi bi-telephone-inbound-fill"></i> <strong>Telefone / Whatsapp:</strong> (11) 3312-3312</p>
+                    <p><i class="bi bi-envelope-fill"></i> <strong>E-mail:</strong> contato@niazichohfitelecom.com.br</p>
+                    <p><i class="bi bi-geo-alt-fill"></i> <strong>Endereço para atendimento:</strong> Rua Cadiriri, 629 - Parque da Mooca, São Paulo - SP</p>
+                    <hr>
+                    <div class="mt-3">
+                        <i class="bi bi-clock-history"></i> <strong>Horário de atendimento:</strong> Segunda a sábado, 8h às 20h (Suporte técnico 24h)
+                    </div>
+                    <div class="mt-3 d-flex gap-3 fs-3">
+                        <a href="#" class="text-dark"><i class="bi bi-whatsapp" style="color:#25D366;"></i></a>
+                        <a href="#" class="text-dark"><i class="bi bi-instagram" style="color:#E4405F;"></i></a>
+                        <a href="#" class="text-dark"><i class="bi bi-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="card shadow-sm border-0 rounded-4 p-4">
+                    <h4 class="mb-3">Envie uma mensagem</h4>
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Nome completo</label>
+                                <input type="text" class="form-control" placeholder="Seu nome">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Telefone / WhatsApp</label>
+                                <input type="tel" class="form-control" placeholder="(11) 99999-9999">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">E-mail</label>
+                                <input type="email" class="form-control" placeholder="email@exemplo.com">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Mensagem / Dúvida</label>
+                                <textarea rows="4" class="form-control" placeholder="Gostaria de saber sobre planos, disponibilidade..."></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary-custom text-white px-5 py-2">Enviar mensagem <i class="bi bi-send"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER COMPLETO -->
+<footer class="footer pt-5 pb-4">
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-md-5">
+                <div class="d-flex align-items-center mb-3">
+                    <i class="bi bi-wifi fs-1 me-2 text-info"></i>
+                    <span class="fs-3 fw-bold text-white">Niazi<span class="text-info">Chohfi</span> Telecom</span>
+                </div>
+                <p>Internet de verdade, com fibra óptica de ponta a ponta e atendimento humano. Transformamos a sua conexão em experiência.</p>
+                <div><i class="bi bi-c-circle"></i> 2025 Niazi Chohfi Telecom - Todos os direitos reservados.</div>
+            </div>
+            <div class="col-md-3">
+                <h5 class="fw-bold text-white">Links úteis</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#planos">Planos</a></li>
+                    <li><a href="#sobre">Sobre a empresa</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#">Política de privacidade</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5 class="fw-bold text-white">Informações legais</h5>
+                <p class="small mb-1"><strong>CNPJ:</strong> 06.976.612/0005-24</p>
+                <p class="small mb-1"><strong>Razão Social:</strong> Niazi Chohfi Textil Ltda.</p>
+                <p class="small mb-1"><strong>Data Cadastro:</strong> 08/01/2013</p>
+                <p class="small"><strong>Endereço:</strong> Rua Cadiriri, 629 - Parque da Mooca, São Paulo - SP, 03109-040</p>
+            </div>
+        </div>
+        <hr class="my-4 bg-secondary">
+        <div class="text-center small">
+            <i class="bi bi-shield-check"></i> Provedor de internet certificado ANATEL | Atendimento local na Zona Leste de SP
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- small script para smooth nos links -->
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if(href === "#" || href === "") return;
+            const target = document.querySelector(href);
+            if(target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+</body>
+</html>
