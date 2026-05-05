@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Niazi Chohfi Tecidos | Moda e Criação</title>
-    <!-- Favicon (ícone na aba) -->
+    <!-- Favicon (ícone na aba do navegador) -->
     <link rel="icon" type="image/png" href="https://img.icons8.com/color/48/000000/fabric--v1.png">
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -181,6 +181,13 @@
         .product-showcase:hover {
             box-shadow: 0 10px 25px rgba(0,0,0,0.08);
         }
+        .icon-decorative {
+            font-size: 3rem;
+            opacity: 0.3;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2rem;
@@ -193,11 +200,12 @@
 </head>
 <body>
 
-<!-- NAVBAR com ícone de tecido -->
+<!-- NAVBAR com ícone de tesoura e rolinho de tecido -->
 <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top py-2">
     <div class="container">
         <a class="navbar-brand fw-bold" href="#">
             <i class="bi bi-scissors fs-1 me-2" style="color: #8B5E3C;"></i> 
+            <i class="bi bi-file-richtext-fill fs-1 me-1" style="color: #D4A373;"></i>
             Niazi<span>Chohfi</span> Tecidos
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
@@ -205,175 +213,186 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarMain">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
-                <li class="nav-item"><a class="nav-link fw-semibold" href="#home"><i class="bi bi-house-door"></i> Início</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold" href="#home"><i class="bi bi-house-door-fill"></i> Início</a></li>
                 <li class="nav-item"><a class="nav-link fw-semibold" href="#produtos"><i class="bi bi-grid-3x3-gap-fill"></i> Produtos</a></li>
-                <li class="nav-item"><a class="nav-link fw-semibold" href="#sobre"><i class="bi bi-building"></i> Sobre</a></li>
-                <li class="nav-item"><a class="nav-link fw-semibold" href="#contato"><i class="bi bi-envelope-paper"></i> Contato</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold" href="#sobre"><i class="bi bi-building-fill"></i> Sobre</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold" href="#contato"><i class="bi bi-envelope-paper-fill"></i> Contato</a></li>
             </ul>
-            <a href="#contato" class="btn btn-primary-custom ms-lg-3"><i class="bi bi-cart3"></i> Compre Agora</a>
+            <a href="#contato" class="btn btn-primary-custom ms-lg-3"><i class="bi bi-cart-fill"></i> <i class="bi bi-whatsapp"></i> Compre Agora</a>
         </div>
     </div>
 </nav>
 
-<!-- HERO / HOME -->
-<section id="home" class="hero-section">
-    <div class="container">
+<!-- HERO / HOME com ícones decorativos -->
+<section id="home" class="hero-section position-relative">
+    <div class="container position-relative">
         <div class="row align-items-center g-5">
             <div class="col-lg-7">
                 <div class="mb-3">
                     <i class="bi bi-stars fs-1 text-primary"></i>
+                    <i class="bi bi-gem fs-1 text-primary ms-2"></i>
+                    <i class="bi bi-heart-fill fs-1 text-primary ms-2"></i>
                 </div>
-                <h1 class="hero-title mb-3">Tecidos de qualidade <br> para <span style="color:#8B5E3C;">criar e transformar</span></h1>
-                <p class="lead mb-4"><i class="bi bi-check-circle-fill me-1" style="color:#8B5E3C;"></i> Mais de uma década de tradição no Parque da Mooca. Variedade em tecidos, aviamentos e linhas para todos os seus projetos!</p>
+                <h1 class="hero-title mb-3"><i class="bi bi-threads-fill"></i> Tecidos de qualidade <br> para <span style="color:#8B5E3C;">criar e transformar</span> <i class="bi bi-palette-fill"></i></h1>
+                <p class="lead mb-4"><i class="bi bi-check-circle-fill me-1" style="color:#8B5E3C;"></i> <i class="bi bi-trophy-fill me-1"></i> Mais de uma década de tradição no Parque da Mooca. Variedade em tecidos, aviamentos e linhas para todos os seus projetos!</p>
                 <div class="d-flex flex-wrap gap-3">
-                    <a href="#produtos" class="btn btn-primary-custom btn-lg"><i class="bi bi-eye"></i> Ver Coleções</a>
-                    <a href="#contato" class="btn btn-outline-custom"><i class="bi bi-whatsapp"></i> Fale conosco</a>
+                    <a href="#produtos" class="btn btn-primary-custom btn-lg"><i class="bi bi-eye-fill"></i> <i class="bi bi-grid-3x3-gap-fill"></i> Ver Coleções</a>
+                    <a href="#contato" class="btn btn-outline-custom"><i class="bi bi-whatsapp"></i> <i class="bi bi-chat-dots-fill"></i> Fale conosco</a>
                 </div>
                 <div class="mt-4 d-flex gap-4 flex-wrap">
-                    <div><i class="bi bi-trophy-fill fs-4 me-1 text-warning"></i> <strong>+11 anos</strong> de mercado</div>
-                    <div><i class="bi bi-emoji-smile-fill fs-4 me-1" style="color:#8B5E3C;"></i> <strong>Milhares</strong> de clientes satisfeitos</div>
-                    <div><i class="bi bi-truck fs-4 me-1" style="color:#8B5E3C;"></i> <strong>Entrega</strong> para todo SP</div>
+                    <div><i class="bi bi-trophy-fill fs-4 me-1 text-warning"></i> <i class="bi bi-calendar-heart-fill"></i> <strong>+11 anos</strong> de mercado</div>
+                    <div><i class="bi bi-emoji-smile-fill fs-4 me-1" style="color:#8B5E3C;"></i> <i class="bi bi-people-fill"></i> <strong>Milhares</strong> de clientes satisfeitos</div>
+                    <div><i class="bi bi-truck fs-4 me-1" style="color:#8B5E3C;"></i> <i class="bi bi-map-fill"></i> <strong>Entrega</strong> para todo SP</div>
                 </div>
             </div>
             <div class="col-lg-5 text-lg-end text-center">
                 <i class="bi bi-fan" style="font-size: 8rem; color: #8B5E3C; opacity: 0.7;"></i>
-                <div class="mt-2"><i class="bi bi-threads-fill fs-1"></i> <span class="fw-bold">Moda & Criação</span></div>
+                <i class="bi bi-threads-fill fs-1"></i> <i class="bi bi-motherboard-fill fs-1"></i>
+                <div class="mt-2"><i class="bi bi-threads-fill fs-1"></i> <span class="fw-bold">Moda & Criação</span> <i class="bi bi-scissors fs-1"></i></div>
             </div>
         </div>
     </div>
+    <!-- Ícone decorativo de fundo -->
+    <i class="bi bi-cloud-sun-fill icon-decorative"></i>
 </section>
 
-<!-- CATEGORIAS / DIFERENCIAIS COM ÍCONES -->
+<!-- CATEGORIAS / DIFERENCIAIS COM ÍCONES GRANDES -->
 <div class="container py-4">
     <div class="row text-center g-4">
         <div class="col-md-4">
             <div class="p-3">
-                <div class="icon-feature"><i class="bi bi-box-seam"></i></div>
-                <h4 class="mt-3 fw-bold">Variedade Incrível</h4>
-                <p class="text-secondary">Algodão, seda, linho, malha, jeans e centenas de estampas exclusivas.</p>
+                <div class="icon-feature"><i class="bi bi-box-seam-fill"></i> <i class="bi bi-grip-horizontal"></i></div>
+                <h4 class="mt-3 fw-bold"><i class="bi bi-stars"></i> Variedade Incrível</h4>
+                <p class="text-secondary"><i class="bi bi-dot"></i> Algodão, seda, linho, malha, jeans e centenas de estampas exclusivas.</p>
+                <i class="bi bi-check2-all text-primary"></i> <i class="bi bi-arrow-through-heart-fill"></i>
             </div>
         </div>
         <div class="col-md-4">
             <div class="p-3">
-                <div class="icon-feature"><i class="bi bi-tags"></i></div>
-                <h4 class="mt-3 fw-bold">Preços Acessíveis</h4>
+                <div class="icon-feature"><i class="bi bi-tags-fill"></i> <i class="bi bi-cash-stack"></i></div>
+                <h4 class="mt-3 fw-bold"><i class="bi bi-currency-dollar"></i> Preços Acessíveis</h4>
                 <p class="text-secondary">Compre por metro ou atacado com descontos especiais para revendedores.</p>
+                <i class="bi bi-percent text-primary"></i> <i class="bi bi-graph-up"></i>
             </div>
         </div>
         <div class="col-md-4">
             <div class="p-3">
-                <div class="icon-feature"><i class="bi bi-scissors"></i></div>
-                <h4 class="mt-3 fw-bold">Corte Sob Medida</h4>
+                <div class="icon-feature"><i class="bi bi-scissors"></i> <i class="bi bi-rulers"></i></div>
+                <h4 class="mt-3 fw-bold"><i class="bi bi-pencil-fill"></i> Corte Sob Medida</h4>
                 <p class="text-secondary">Cortamos exatamente a metragem que você precisa, sem desperdícios.</p>
+                <i class="bi bi-check-circle-fill text-primary"></i> <i class="bi bi-hand-index-thumb-fill"></i>
             </div>
         </div>
     </div>
 </div>
 
-<!-- PRODUTOS EM DESTAQUE -->
+<!-- PRODUTOS EM DESTAQUE COM MUITOS ÍCONES -->
 <section id="produtos" class="py-5 bg-white">
     <div class="container">
         <div class="text-center mb-5">
-            <span class="badge bg-warning bg-opacity-10 text-dark px-3 py-2 rounded-pill"><i class="bi bi-gem"></i> Destaques</span>
-            <h2 class="section-title mt-2">Nossos Tecidos Mais Vendidos</h2>
-            <p class="text-secondary"><i class="bi bi-chat-heart"></i> Qualidade e beleza para suas criações</p>
+            <span class="badge bg-warning bg-opacity-10 text-dark px-3 py-2 rounded-pill"><i class="bi bi-gem"></i> <i class="bi bi-star-fill"></i> Destaques <i class="bi bi-star-fill"></i></span>
+            <h2 class="section-title mt-2"><i class="bi bi-collection-fill"></i> Nossos Tecidos Mais Vendidos <i class="bi bi-heart-fill"></i></h2>
+            <p class="text-secondary"><i class="bi bi-chat-heart-fill"></i> Qualidade e beleza para suas criações <i class="bi bi-flower1"></i></p>
         </div>
         <div class="row g-4">
             <div class="col-md-4">
                 <div class="card-category p-4 text-center product-showcase">
-                    <div class="category-icon"><i class="bi bi-flower1"></i></div>
-                    <h4 class="fw-bold">Algodão Viscose</h4>
+                    <div class="category-icon"><i class="bi bi-flower1"></i> <i class="bi bi-droplet-fill"></i></div>
+                    <h4 class="fw-bold"><i class="bi bi-chat-square-heart"></i> Algodão Viscose</h4>
                     <p class="text-secondary">Toque macio, perfeito para vestidos e blusas. Estampas florais e lisas.</p>
-                    <span class="badge bg-light text-dark">A partir de R$ 29,90/m</span>
+                    <span class="badge bg-light text-dark"><i class="bi bi-cash"></i> A partir de R$ 29,90/m <i class="bi bi-arrow-right"></i></span>
+                    <div class="mt-2"><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i></div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card-category p-4 text-center product-showcase">
-                    <div class="category-icon"><i class="bi bi-tshirt"></i></div>
-                    <h4 class="fw-bold">Malha Fitness</h4>
+                    <div class="category-icon"><i class="bi bi-tshirt-fill"></i> <i class="bi bi-person-walking"></i></div>
+                    <h4 class="fw-bold"><i class="bi bi-bicycle"></i> Malha Fitness</h4>
                     <p class="text-secondary">Alta elasticidade, ideal para moda praia e esportes. Cores vibrantes.</p>
-                    <span class="badge bg-light text-dark">A partir de R$ 39,90/m</span>
+                    <span class="badge bg-light text-dark"><i class="bi bi-cash"></i> A partir de R$ 39,90/m</span>
+                    <div class="mt-2"><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-half text-warning"></i></div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card-category p-4 text-center product-showcase">
-                    <div class="category-icon"><i class="bi bi-palette"></i></div>
-                    <h4 class="fw-bold">Jeans Premium</h4>
+                    <div class="category-icon"><i class="bi bi-palette-fill"></i> <i class="bi bi-brush"></i></div>
+                    <h4 class="fw-bold"><i class="bi bi-jeans"></i> Jeans Premium</h4>
                     <p class="text-secondary">Lavagens variadas, ideal para calças, jaquetas e artesanato.</p>
-                    <span class="badge bg-light text-dark">A partir de R$ 44,90/m</span>
+                    <span class="badge bg-light text-dark"><i class="bi bi-cash"></i> A partir de R$ 44,90/m</span>
+                    <div class="mt-2"><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star text-warning"></i></div>
                 </div>
             </div>
         </div>
         <div class="row mt-4 g-4">
             <div class="col-md-4">
                 <div class="card-category p-4 text-center product-showcase">
-                    <div class="category-icon"><i class="bi bi-wind"></i></div>
-                    <h4 class="fw-bold">Linho Natural</h4>
+                    <div class="category-icon"><i class="bi bi-wind"></i> <i class="bi bi-cloud-sun"></i></div>
+                    <h4 class="fw-bold"><i class="bi bi-tree-fill"></i> Linho Natural</h4>
                     <p class="text-secondary">Tecido leve e respirável, perfeito para roupas de verão e decoração.</p>
-                    <span class="badge bg-light text-dark">A partir de R$ 59,90/m</span>
+                    <span class="badge bg-light text-dark"><i class="bi bi-cash"></i> A partir de R$ 59,90/m</span>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card-category p-4 text-center product-showcase">
-                    <div class="category-icon"><i class="bi bi-gem"></i></div>
-                    <h4 class="fw-bold">Cetim e Seda</h4>
+                    <div class="category-icon"><i class="bi bi-gem"></i> <i class="bi bi-diamond-fill"></i></div>
+                    <h4 class="fw-bold"><i class="bi bi-sparkles"></i> Cetim e Seda</h4>
                     <p class="text-secondary">Brilho sofisticado para eventos, lingerie e moda festa.</p>
-                    <span class="badge bg-light text-dark">A partir de R$ 49,90/m</span>
+                    <span class="badge bg-light text-dark"><i class="bi bi-cash"></i> A partir de R$ 49,90/m</span>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card-category p-4 text-center product-showcase">
-                    <div class="category-icon"><i class="bi bi-funnel"></i></div>
-                    <h4 class="fw-bold">Linha e Aviamentos</h4>
+                    <div class="category-icon"><i class="bi bi-funnel-fill"></i> <i class="bi bi-grid-3x3"></i></div>
+                    <h4 class="fw-bold"><i class="bi bi-threads"></i> Linha e Aviamentos</h4>
                     <p class="text-secondary">Zíperes, botões, linhas de costura e tudo para seu projeto.</p>
-                    <span class="badge bg-light text-dark">Consulte valores</span>
+                    <span class="badge bg-light text-dark"><i class="bi bi-cash"></i> Consulte valores</span>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- SOBRE + INFORMAÇÕES DA EMPRESA -->
+<!-- SOBRE + INFORMAÇÕES DA EMPRESA COM ÍCONES -->
 <section id="sobre" class="py-5 bg-light">
     <div class="container">
         <div class="row g-5 align-items-center">
             <div class="col-lg-6">
-                <span class="badge bg-secondary bg-opacity-10 text-secondary py-2 px-3 mb-2 rounded-pill"><i class="bi bi-building"></i> Tradição e Confiança</span>
-                <h2 class="fw-bold mb-3"><i class="bi bi-shop"></i> Niazi Chohfi: referência em tecidos na Mooca</h2>
-                <p class="lead text-secondary">Há mais de uma década, levando moda, criatividade e qualidade para São Paulo. Somos uma empresa familiar que valoriza o atendimento personalizado.</p>
+                <span class="badge bg-secondary bg-opacity-10 text-secondary py-2 px-3 mb-2 rounded-pill"><i class="bi bi-building-fill"></i> <i class="bi bi-cup-hot-fill"></i> Tradição e Confiança</span>
+                <h2 class="fw-bold mb-3"><i class="bi bi-shop-fill"></i> Niazi Chohfi: referência em tecidos na Mooca <i class="bi bi-geo-alt-fill"></i></h2>
+                <p class="lead text-secondary"><i class="bi bi-chat-quote-fill"></i> Há mais de uma década, levando moda, criatividade e qualidade para São Paulo. Somos uma empresa familiar que valoriza o atendimento personalizado.</p>
                 <div class="info-block mt-4">
                     <div class="row g-3">
                         <div class="col-sm-6">
-                            <i class="bi bi-calendar-check-fill me-2" style="color:#8B5E3C;"></i> <strong>Data Situação Cadastral:</strong><br> 08/01/2013
+                            <i class="bi bi-calendar-check-fill me-2" style="color:#8B5E3C;"></i> <i class="bi bi-clock-history"></i> <strong>Data Situação Cadastral:</strong><br> 08/01/2013
                         </div>
                         <div class="col-sm-6">
-                            <i class="bi bi-qr-code-scan me-2"></i> <strong>CNPJ:</strong><br> <span class="badge-cnpj d-inline-block mt-1">06.976.612/0005-24</span>
+                            <i class="bi bi-qr-code-scan me-2"></i> <i class="bi bi-card-text"></i> <strong>CNPJ:</strong><br> <span class="badge-cnpj d-inline-block mt-1">06.976.612/0005-24</span>
                         </div>
                         <div class="col-12">
-                            <i class="bi bi-geo-alt-fill me-2" style="color:#8B5E3C;"></i> <strong>Endereço da Loja:</strong><br>
+                            <i class="bi bi-geo-alt-fill me-2" style="color:#8B5E3C;"></i> <i class="bi bi-house-fill"></i> <strong>Endereço da Loja:</strong><br>
                             Rua Cadiriri, 629 - Parque da Mooca, São Paulo - SP, 03109-040
                         </div>
                         <div class="col-12">
-                            <i class="bi bi-telephone-fill me-2"></i> <strong>Central de Vendas:</strong><br> (11) 3312-3312
+                            <i class="bi bi-telephone-fill me-2"></i> <i class="bi bi-whatsapp"></i> <strong>Central de Vendas:</strong><br> (11) 3312-3312
                         </div>
                     </div>
                 </div>
-                <p class="mt-4 text-secondary"><i class="bi bi-pin-map-fill"></i> Venha nos visitar no coração do Parque da Mooca! Estacionamento fácil e ambiente acolhedor para você escolher seus tecidos com calma.</p>
+                <p class="mt-4 text-secondary"><i class="bi bi-pin-map-fill"></i> <i class="bi bi-car-front-fill"></i> Venha nos visitar no coração do Parque da Mooca! Estacionamento fácil e ambiente acolhedor para você escolher seus tecidos com calma.</p>
             </div>
             <div class="col-lg-6">
                 <div class="position-relative">
                     <div class="bg-white p-4 rounded-4 shadow-sm">
-                        <i class="bi bi-cup-hot fs-1 text-warning"></i>
-                        <h4 class="mt-2">Ambiente Familiar</h4>
+                        <i class="bi bi-cup-hot-fill fs-1 text-warning"></i> <i class="bi bi-people-fill fs-1 text-primary"></i>
+                        <h4 class="mt-2"><i class="bi bi-house-heart-fill"></i> Ambiente Familiar <i class="bi bi-balloon-heart-fill"></i></h4>
                         <p>Nosso time está sempre pronto para ajudar desde a escolha do tecido até dicas de modelagem. Mais de 5 mil clientes atendidos presencialmente e online.</p>
                         <div class="d-flex gap-3 mt-3">
                             <i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i>
-                            <span class="fw-semibold">5.0 (Google Avaliações)</span>
+                            <span class="fw-semibold"><i class="bi bi-google"></i> 5.0 (Google Avaliações)</span>
                         </div>
                     </div>
                     <div class="mt-4 text-center">
-                        <i class="bi bi-house-heart fs-1 text-primary"></i>
-                        <p class="mt-2"><i class="bi bi-geo-alt"></i> Parque da Mooca - Zona Leste de SP</p>
+                        <i class="bi bi-house-heart-fill fs-1 text-primary"></i> <i class="bi bi-tree-fill fs-1 text-success"></i>
+                        <p class="mt-2"><i class="bi bi-geo-alt-fill"></i> Parque da Mooca - Zona Leste de SP <i class="bi bi-pin-map-fill"></i></p>
                     </div>
                 </div>
             </div>
@@ -381,52 +400,53 @@
     </div>
 </section>
 
-<!-- FRASE DE DESTAQUE + OFERTA -->
+<!-- FRASE DE DESTAQUE + OFERTA COM ÍCONES -->
 <div class="container py-5">
     <div class="row bg-white rounded-4 p-4 shadow-sm align-items-center" style="background: linear-gradient(120deg, #FFF2E6 0%, #FFE8D9 100%);">
         <div class="col-md-8">
-            <h3><i class="bi bi-megaphone me-2" style="color: #8B5E3C;"></i> Atendimento especial para costureiras e pequenos negócios</h3>
-            <p>Descontos progressivos para compras acima de 50 metros. Consulte nossa tabela de preços para atacado e revendedores.</p>
-            <span class="badge bg-primary text-white p-2"> <i class="bi bi-clock"></i> Aberto de segunda a sábado - 9h às 19h </span>
-            <span class="badge bg-primary text-white p-2 ms-2"> <i class="bi bi-credit-card"></i> Aceitamos todas as bandeiras</span>
+            <h3><i class="bi bi-megaphone-fill me-2" style="color: #8B5E3C;"></i> <i class="bi bi-headset"></i> Atendimento especial para costureiras e pequenos negócios <i class="bi bi-briefcase-fill"></i></h3>
+            <p><i class="bi bi-tags-fill"></i> Descontos progressivos para compras acima de 50 metros. Consulte nossa tabela de preços para atacado e revendedores.</p>
+            <span class="badge bg-primary text-white p-2"> <i class="bi bi-clock-fill"></i> Aberto de segunda a sábado - 9h às 19h </span>
+            <span class="badge bg-primary text-white p-2 ms-2"> <i class="bi bi-credit-card-fill"></i> Aceitamos todas as bandeiras <i class="bi bi-bank2"></i></span>
         </div>
         <div class="col-md-4 text-md-end">
-            <a href="#contato" class="btn btn-primary-custom"><i class="bi bi-envelope-paper"></i> Peça seu orçamento</a>
+            <a href="#contato" class="btn btn-primary-custom"><i class="bi bi-envelope-paper-fill"></i> <i class="bi bi-send-fill"></i> Peça seu orçamento</a>
         </div>
     </div>
 </div>
 
-<!-- CONTATO -->
+<!-- CONTATO COM MUITOS ÍCONES -->
 <section id="contato" class="py-5 bg-white">
     <div class="container">
         <div class="row g-5">
             <div class="col-lg-5">
-                <h2 class="fw-bold mb-3"><i class="bi bi-envelope-paper-heart"></i> Fale Conosco</h2>
-                <p>Estamos prontos para atender, tirar dúvidas sobre tecidos, estoque ou fazer encomendas especiais.</p>
+                <h2 class="fw-bold mb-3"><i class="bi bi-envelope-paper-heart-fill"></i> <i class="bi bi-chat-heart-fill"></i> Fale Conosco <i class="bi bi-emoji-smile-fill"></i></h2>
+                <p><i class="bi bi-megaphone"></i> Estamos prontos para atender, tirar dúvidas sobre tecidos, estoque ou fazer encomendas especiais.</p>
                 <div class="contact-info mt-4">
-                    <p><i class="bi bi-telephone-inbound-fill"></i> <strong>Telefone / WhatsApp:</strong> (11) 3312-3312</p>
-                    <p><i class="bi bi-envelope-fill"></i> <strong>E-mail:</strong> contato@niazichohfitecidos.com.br</p>
-                    <p><i class="bi bi-geo-alt-fill"></i> <strong>Loja Física:</strong> Rua Cadiriri, 629 - Parque da Mooca, São Paulo - SP</p>
+                    <p><i class="bi bi-telephone-inbound-fill"></i> <i class="bi bi-whatsapp"></i> <strong>Telefone / WhatsApp:</strong> (11) 3312-3312</p>
+                    <p><i class="bi bi-envelope-fill"></i> <i class="bi bi-inbox-fill"></i> <strong>E-mail:</strong> contato@niazichohfitecidos.com.br</p>
+                    <p><i class="bi bi-geo-alt-fill"></i> <i class="bi bi-shop"></i> <strong>Loja Física:</strong> Rua Cadiriri, 629 - Parque da Mooca, São Paulo - SP</p>
                     <hr>
                     <div class="mt-3">
-                        <i class="bi bi-clock-history"></i> <strong>Horário de Funcionamento:</strong><br>
+                        <i class="bi bi-clock-history"></i> <i class="bi bi-calendar-week"></i> <strong>Horário de Funcionamento:</strong><br>
                         Segunda a Sexta: 9h às 19h | Sábado: 9h às 16h
                     </div>
                     <div class="mt-3 d-flex gap-3 fs-3">
                         <a href="#" class="text-dark"><i class="bi bi-whatsapp" style="color:#25D366;"></i></a>
                         <a href="#" class="text-dark"><i class="bi bi-instagram" style="color:#E4405F;"></i></a>
-                        <a href="#" class="text-dark"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="text-dark"><i class="bi bi-pinterest"></i></a>
+                        <a href="#" class="text-dark"><i class="bi bi-facebook" style="color:#1877F2;"></i></a>
+                        <a href="#" class="text-dark"><i class="bi bi-pinterest" style="color:#E60023;"></i></a>
+                        <a href="#" class="text-dark"><i class="bi bi-tiktok"></i></a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-7">
                 <div class="card shadow-sm border-0 rounded-4 p-4">
-                    <h4 class="mb-3"><i class="bi bi-chat-right-text"></i> Envie sua mensagem</h4>
+                    <h4 class="mb-3"><i class="bi bi-chat-right-text-fill"></i> <i class="bi bi-pencil-square"></i> Envie sua mensagem <i class="bi bi-send-fill"></i></h4>
                     <form>
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <label class="form-label"><i class="bi bi-person"></i> Nome completo</label>
+                                <label class="form-label"><i class="bi bi-person-fill"></i> Nome completo</label>
                                 <input type="text" class="form-control" placeholder="Seu nome">
                             </div>
                             <div class="col-md-6">
@@ -434,15 +454,15 @@
                                 <input type="tel" class="form-control" placeholder="(11) 99999-9999">
                             </div>
                             <div class="col-12">
-                                <label class="form-label"><i class="bi bi-envelope"></i> E-mail</label>
+                                <label class="form-label"><i class="bi bi-envelope-fill"></i> E-mail</label>
                                 <input type="email" class="form-control" placeholder="email@exemplo.com">
                             </div>
                             <div class="col-12">
-                                <label class="form-label"><i class="bi bi-chat"></i> Mensagem</label>
+                                <label class="form-label"><i class="bi bi-chat-fill"></i> Mensagem</label>
                                 <textarea rows="4" class="form-control" placeholder="Qual tecido você procura? Gostaria de saber preços, etc."></textarea>
                             </div>
                             <div class="col-12">
-                                <button type="submit" class="btn btn-primary-custom text-white px-5 py-2"><i class="bi bi-send"></i> Enviar mensagem</button>
+                                <button type="submit" class="btn btn-primary-custom text-white px-5 py-2"><i class="bi bi-send-fill"></i> <i class="bi bi-envelope-paper-fill"></i> Enviar mensagem</button>
                             </div>
                         </div>
                     </form>
@@ -452,55 +472,31 @@
     </div>
 </section>
 
-<!-- FOOTER -->
+<!-- FOOTER COM ÍCONES -->
 <footer class="footer pt-5 pb-4">
     <div class="container">
         <div class="row gy-4">
             <div class="col-md-5">
                 <div class="d-flex align-items-center mb-3">
                     <i class="bi bi-scissors fs-1 me-2 text-secondary"></i>
+                    <i class="bi bi-threads-fill fs-1 me-2 text-secondary"></i>
                     <span class="fs-3 fw-bold text-white">Niazi<span class="text-secondary">Chohfi</span> Tecidos</span>
                 </div>
-                <p><i class="bi bi-shield-check"></i> Mais de uma década de tradição no ramo têxtil. Qualidade, variedade e atendimento especializado.</p>
+                <p><i class="bi bi-shield-check-fill"></i> <i class="bi bi-patch-check-fill"></i> Mais de uma década de tradição no ramo têxtil. Qualidade, variedade e atendimento especializado.</p>
                 <div><i class="bi bi-c-circle"></i> 2025 Niazi Chohfi Têxtil Ltda. - Todos os direitos reservados.</div>
             </div>
             <div class="col-md-3">
-                <h5 class="fw-bold text-white"><i class="bi bi-link-45deg"></i> Navegação</h5>
+                <h5 class="fw-bold text-white"><i class="bi bi-link-45deg"></i> <i class="bi bi-compass-fill"></i> Navegação</h5>
                 <ul class="list-unstyled">
-                    <li><a href="#home"><i class="bi bi-house-door"></i> Início</a></li>
-                    <li><a href="#produtos"><i class="bi bi-grid"></i> Produtos</a></li>
-                    <li><a href="#sobre"><i class="bi bi-building"></i> Sobre a empresa</a></li>
-                    <li><a href="#contato"><i class="bi bi-envelope"></i> Contato</a></li>
+                    <li><a href="#home"><i class="bi bi-house-door-fill"></i> Início</a></li>
+                    <li><a href="#produtos"><i class="bi bi-grid-fill"></i> Produtos</a></li>
+                    <li><a href="#sobre"><i class="bi bi-building-fill"></i> Sobre a empresa</a></li>
+                    <li><a href="#contato"><i class="bi bi-envelope-fill"></i> Contato</a></li>
                 </ul>
             </div>
             <div class="col-md-4">
-                <h5 class="fw-bold text-white"><i class="bi bi-info-circle"></i> Informações Legais</h5>
+                <h5 class="fw-bold text-white"><i class="bi bi-info-circle-fill"></i> Informações Legais</h5>
                 <p class="small mb-1"><i class="bi bi-card-text"></i> <strong>CNPJ:</strong> 06.976.612/0005-24</p>
-                <p class="small mb-1"><i class="bi bi-building"></i> <strong>Razão Social:</strong> Niazi Chohfi Textil Ltda.</p>
-                <p class="small mb-1"><i class="bi bi-calendar"></i> <strong>Data Cadastro:</strong> 08/01/2013</p>
-                <p class="small"><i class="bi bi-geo-alt"></i> <strong>Endereço:</strong> Rua Cadiriri, 629 - Parque da Mooca, SP</p>
-            </div>
-        </div>
-        <hr class="my-4 bg-secondary">
-        <div class="text-center small">
-            <i class="bi bi-truck"></i> Entregamos para toda Grande São Paulo | Retire na loja sem custo
-        </div>
-    </div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if(href === "#" || href === "") return;
-            const target = document.querySelector(href);
-            if(target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
-    });
-</script>
-</body>
-</html>
+                <p class="small mb-1"><i class="bi bi-building-fill"></i> <strong>Razão Social:</strong> Niazi Chohfi Textil Ltda.</p>
+                <p class="small mb-1"><i class="bi bi-calendar-fill"></i> <strong>Data Cadastro:</strong> 08/01/2013</p>
+                <p class="small"><i class="bi bi-geo-alt-fill"></i> <strong>Endereço:</strong> Rua Cadiriri, 629 - Parque da Mooca,
