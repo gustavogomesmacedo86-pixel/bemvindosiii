@@ -1,538 +1,595 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Niazi Chohfi Tecidos | Moda e Criação</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Globalrio Telecomunicações - Internet de Alta Velocidade no Rio de Janeiro</title>
     
-    <!-- FAVICON PERSONALIZADO - Ícone de tesoura e tecido -->
-    <!-- Opção 1: SVG inline (tesoura + tecido) - mais elegante -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✂️🧵</text></svg>">
-    
-    <!-- Opção 2: PNG via CDN (ícone de rolo de tecido) - fallback confiável -->
-    <link rel="icon" type="image/png" sizes="32x32" href="https://img.icons8.com/color/48/000000/fabric--v1.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://img.icons8.com/color/48/000000/fabric--v1.png">
-    
-    <!-- Opção 3: Apple Touch Icon para iOS -->
-    <link rel="apple-touch-icon" href="https://img.icons8.com/color/48/000000/fabric--v1.png">
-    
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2300526B'/><path d='M30 70 L50 30 L70 70' stroke='%2300D4FF' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/><circle cx='50' cy='55' r='8' fill='%2300D4FF'/></svg>">
+    
     <style>
+        :root {
+            --primary-color: #00526B;
+            --secondary-color: #00D4FF;
+            --accent-color: #00A3CC;
+            --light-bg: #f0f8fa;
+            --dark-text: #1a1a2e;
+            --white-text: #ffffff;
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+        
         body {
-            font-family: 'Inter', sans-serif;
-            background: #fdfaf7;
-            scroll-behavior: smooth;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-text);
         }
-        :root {
-            --primary: #8B5E3C;
-            --primary-dark: #6B3E1C;
-            --secondary: #D4A373;
-            --accent: #C9A87C;
-            --light-bg: #FFF8F0;
-            --dark-bg: #2C2C2C;
-            --soft-pink: #F9E5D8;
-            --green-teal: #A7C4B5;
+        
+        /* Navbar */
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-color), #003d4f);
+            padding: 15px 0;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.3);
         }
-        h1, h2, h3, .logo-font {
-            font-family: 'Playfair Display', serif;
-        }
+        
         .navbar-brand {
-            font-weight: 800;
-            font-size: 1.7rem;
-            letter-spacing: -0.5px;
-            font-family: 'Playfair Display', serif;
-        }
-        .navbar-brand span {
-            color: var(--primary);
-        }
-        .hero-section {
-            background: linear-gradient(135deg, #F3E9DC 0%, #E6D5C3 100%);
-            color: #2C2C2C;
-            padding: 80px 0;
-            border-radius: 0 0 2rem 2rem;
-            margin-bottom: 2rem;
-        }
-        .hero-title {
-            font-weight: 800;
-            font-size: 3rem;
-            line-height: 1.2;
-            font-family: 'Playfair Display', serif;
-        }
-        .btn-outline-custom {
-            border: 2px solid var(--primary);
-            background: transparent;
-            color: var(--primary);
-            border-radius: 50px;
-            padding: 10px 28px;
-            transition: 0.3s;
-            font-weight: 600;
-        }
-        .btn-outline-custom:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-3px);
-        }
-        .btn-primary-custom {
-            background: var(--primary);
-            border: none;
-            border-radius: 50px;
-            padding: 12px 32px;
-            font-weight: 600;
-            transition: 0.3s;
-            color: white;
-        }
-        .btn-primary-custom:hover {
-            background: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        .card-category {
-            border: none;
-            border-radius: 1.2rem;
-            transition: all 0.3s ease;
-            background: white;
-            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
-            height: 100%;
-            cursor: pointer;
-        }
-        .card-category:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 30px -12px rgba(139,94,60,0.2);
-        }
-        .category-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            background: var(--soft-pink);
-            width: 80px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            margin: 0 auto 1rem auto;
-        }
-        .section-title {
             font-weight: 700;
-            font-family: 'Playfair Display', serif;
-            position: relative;
-            display: inline-block;
-            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            color: white !important;
         }
-        .section-title:after {
+        
+        .navbar-brand i {
+            color: var(--secondary-color);
+            margin-right: 10px;
+        }
+        
+        .nav-link {
+            color: white !important;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: var(--secondary-color) !important;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #003d4f 0%, #00526B 50%, #00A3CC 100%);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
             content: '';
             position: absolute;
-            bottom: -12px;
+            top: 0;
             left: 0;
-            width: 70px;
-            height: 3px;
-            background: var(--primary);
-            border-radius: 4px;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.05)" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,208C1248,224,1344,192,1392,176L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
         }
-        .footer {
-            background: #2C2C2C;
-            color: #D4C5B5;
-            border-top: 4px solid var(--primary);
-        }
-        .footer a {
-            color: #D4C5B5;
-            text-decoration: none;
-            transition: 0.2s;
-        }
-        .footer a:hover {
-            color: var(--secondary);
-        }
-        .info-block {
-            background: white;
-            border-radius: 1.2rem;
-            padding: 1.5rem;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
-            border-left: 5px solid var(--primary);
-        }
-        .contact-info i {
-            width: 32px;
-            font-size: 1.3rem;
-            color: var(--primary);
-        }
-        .badge-cnpj {
-            font-family: monospace;
-            background: #e9ecef;
-            padding: 6px 12px;
-            border-radius: 40px;
-            font-size: 0.85rem;
-        }
-        .icon-feature {
-            font-size: 2rem;
-            background: var(--soft-pink);
-            width: 70px;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            margin: 0 auto 1rem auto;
-            transition: 0.2s;
-            color: var(--primary);
-        }
-        .product-showcase {
-            background: white;
-            border-radius: 1rem;
-            transition: 0.3s;
-        }
-        .product-showcase:hover {
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-        }
-        .icon-decorative {
+        
+        .hero h1 {
             font-size: 3rem;
-            opacity: 0.3;
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
         }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero .btn-primary {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            color: var(--primary-color);
+            font-weight: 600;
+            padding: 12px 30px;
+            transition: all 0.3s;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero .btn-primary:hover {
+            background-color: white;
+            border-color: white;
+            transform: translateY(-2px);
+        }
+        
+        .speed-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            z-index: 1;
+            position: relative;
+        }
+        
+        .speed-badge i {
+            color: #00ff88;
+            margin-right: 5px;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            margin: 20px 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        /* Plans Section */
+        .plans {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f9f9f9, #ffffff);
+        }
+        
+        .plan-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px 30px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .plan-card.popular {
+            border-color: var(--secondary-color);
+            transform: scale(1.05);
+            background: linear-gradient(135deg, white, #f0fdff);
+        }
+        
+        .plan-card:hover {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .plan-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .plan-speed {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin: 20px 0;
+        }
+        
+        .plan-speed span {
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        .plan-features {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        
+        .plan-features li {
+            margin: 10px 0;
+            color: #555;
+        }
+        
+        .plan-features i {
+            color: #00ff88;
+            margin-right: 5px;
+        }
+        
+        .badge-popular {
+            position: absolute;
+            top: -15px;
+            right: 30px;
+            background: var(--secondary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+        
+        .about-content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .about-content h2 {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+        
+        .company-info {
+            margin-top: 30px;
+            padding: 20px;
+            background: var(--light-bg);
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .company-info i {
+            color: var(--accent-color);
+            margin-right: 10px;
+            width: 20px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-color), #003d4f);
+            color: white;
+        }
+        
+        .contact-info {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .contact h2 {
+            color: white;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+        
+        .contact p {
+            margin: 15px 0;
+        }
+        
+        .contact i {
+            color: var(--secondary-color);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .social-icons {
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Footer */
+        footer {
+            background: #002a35;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        footer p {
+            margin: 0;
+            color: #aaa;
+        }
+        
+        /* Responsive */
         @media (max-width: 768px) {
-            .hero-title {
+            .hero h1 {
                 font-size: 2rem;
             }
-            .hero-section {
-                padding: 50px 0;
+            
+            .plan-card.popular {
+                transform: scale(1);
             }
+            
+            .hero {
+                padding: 60px 0;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
         }
     </style>
 </head>
 <body>
-
-<!-- NAVBAR com ícone de tesoura e rolinho de tecido -->
-<nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top py-2">
-    <div class="container">
-        <a class="navbar-brand fw-bold" href="#">
-            <i class="bi bi-scissors fs-1 me-2" style="color: #8B5E3C;"></i> 
-            <i class="bi bi-file-richtext-fill fs-1 me-1" style="color: #D4A373;"></i>
-            Niazi<span>Chohfi</span> Tecidos
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarMain">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
-                <li class="nav-item"><a class="nav-link fw-semibold" href="#home"><i class="bi bi-house-door-fill"></i> Início</a></li>
-                <li class="nav-item"><a class="nav-link fw-semibold" href="#produtos"><i class="bi bi-grid-3x3-gap-fill"></i> Produtos</a></li>
-                <li class="nav-item"><a class="nav-link fw-semibold" href="#sobre"><i class="bi bi-building-fill"></i> Sobre</a></li>
-                <li class="nav-item"><a class="nav-link fw-semibold" href="#contato"><i class="bi bi-envelope-paper-fill"></i> Contato</a></li>
-            </ul>
-            <a href="#contato" class="btn btn-primary-custom ms-lg-3"><i class="bi bi-cart-fill"></i> <i class="bi bi-whatsapp"></i> Compre Agora</a>
-        </div>
-    </div>
-</nav>
-
-<!-- HERO / HOME com ícones decorativos -->
-<section id="home" class="hero-section position-relative">
-    <div class="container position-relative">
-        <div class="row align-items-center g-5">
-            <div class="col-lg-7">
-                <div class="mb-3">
-                    <i class="bi bi-stars fs-1 text-primary"></i>
-                    <i class="bi bi-gem fs-1 text-primary ms-2"></i>
-                    <i class="bi bi-heart-fill fs-1 text-primary ms-2"></i>
-                </div>
-                <h1 class="hero-title mb-3"><i class="bi bi-threads-fill"></i> Tecidos de qualidade <br> para <span style="color:#8B5E3C;">criar e transformar</span> <i class="bi bi-palette-fill"></i></h1>
-                <p class="lead mb-4"><i class="bi bi-check-circle-fill me-1" style="color:#8B5E3C;"></i> <i class="bi bi-trophy-fill me-1"></i> Mais de uma década de tradição no Parque da Mooca. Variedade em tecidos, aviamentos e linhas para todos os seus projetos!</p>
-                <div class="d-flex flex-wrap gap-3">
-                    <a href="#produtos" class="btn btn-primary-custom btn-lg"><i class="bi bi-eye-fill"></i> <i class="bi bi-grid-3x3-gap-fill"></i> Ver Coleções</a>
-                    <a href="#contato" class="btn btn-outline-custom"><i class="bi bi-whatsapp"></i> <i class="bi bi-chat-dots-fill"></i> Fale conosco</a>
-                </div>
-                <div class="mt-4 d-flex gap-4 flex-wrap">
-                    <div><i class="bi bi-trophy-fill fs-4 me-1 text-warning"></i> <i class="bi bi-calendar-heart-fill"></i> <strong>+11 anos</strong> de mercado</div>
-                    <div><i class="bi bi-emoji-smile-fill fs-4 me-1" style="color:#8B5E3C;"></i> <i class="bi bi-people-fill"></i> <strong>Milhares</strong> de clientes satisfeitos</div>
-                    <div><i class="bi bi-truck fs-4 me-1" style="color:#8B5E3C;"></i> <i class="bi bi-map-fill"></i> <strong>Entrega</strong> para todo SP</div>
-                </div>
-            </div>
-            <div class="col-lg-5 text-lg-end text-center">
-                <i class="bi bi-fan" style="font-size: 8rem; color: #8B5E3C; opacity: 0.7;"></i>
-                <i class="bi bi-threads-fill fs-1"></i> <i class="bi bi-motherboard-fill fs-1"></i>
-                <div class="mt-2"><i class="bi bi-threads-fill fs-1"></i> <span class="fw-bold">Moda & Criação</span> <i class="bi bi-scissors fs-1"></i></div>
-            </div>
-        </div>
-    </div>
-    <!-- Ícone decorativo de fundo -->
-    <i class="bi bi-cloud-sun-fill icon-decorative"></i>
-</section>
-
-<!-- CATEGORIAS / DIFERENCIAIS COM ÍCONES GRANDES -->
-<div class="container py-4">
-    <div class="row text-center g-4">
-        <div class="col-md-4">
-            <div class="p-3">
-                <div class="icon-feature"><i class="bi bi-box-seam-fill"></i> <i class="bi bi-grip-horizontal"></i></div>
-                <h4 class="mt-3 fw-bold"><i class="bi bi-stars"></i> Variedade Incrível</h4>
-                <p class="text-secondary"><i class="bi bi-dot"></i> Algodão, seda, linho, malha, jeans e centenas de estampas exclusivas.</p>
-                <i class="bi bi-check2-all text-primary"></i> <i class="bi bi-arrow-through-heart-fill"></i>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="p-3">
-                <div class="icon-feature"><i class="bi bi-tags-fill"></i> <i class="bi bi-cash-stack"></i></div>
-                <h4 class="mt-3 fw-bold"><i class="bi bi-currency-dollar"></i> Preços Acessíveis</h4>
-                <p class="text-secondary">Compre por metro ou atacado com descontos especiais para revendedores.</p>
-                <i class="bi bi-percent text-primary"></i> <i class="bi bi-graph-up"></i>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="p-3">
-                <div class="icon-feature"><i class="bi bi-scissors"></i> <i class="bi bi-rulers"></i></div>
-                <h4 class="mt-3 fw-bold"><i class="bi bi-pencil-fill"></i> Corte Sob Medida</h4>
-                <p class="text-secondary">Cortamos exatamente a metragem que você precisa, sem desperdícios.</p>
-                <i class="bi bi-check-circle-fill text-primary"></i> <i class="bi bi-hand-index-thumb-fill"></i>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- PRODUTOS EM DESTAQUE COM MUITOS ÍCONES -->
-<section id="produtos" class="py-5 bg-white">
-    <div class="container">
-        <div class="text-center mb-5">
-            <span class="badge bg-warning bg-opacity-10 text-dark px-3 py-2 rounded-pill"><i class="bi bi-gem"></i> <i class="bi bi-star-fill"></i> Destaques <i class="bi bi-star-fill"></i></span>
-            <h2 class="section-title mt-2"><i class="bi bi-collection-fill"></i> Nossos Tecidos Mais Vendidos <i class="bi bi-heart-fill"></i></h2>
-            <p class="text-secondary"><i class="bi bi-chat-heart-fill"></i> Qualidade e beleza para suas criações <i class="bi bi-flower1"></i></p>
-        </div>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card-category p-4 text-center product-showcase">
-                    <div class="category-icon"><i class="bi bi-flower1"></i> <i class="bi bi-droplet-fill"></i></div>
-                    <h4 class="fw-bold"><i class="bi bi-chat-square-heart"></i> Algodão Viscose</h4>
-                    <p class="text-secondary">Toque macio, perfeito para vestidos e blusas. Estampas florais e lisas.</p>
-                    <span class="badge bg-light text-dark"><i class="bi bi-cash"></i> A partir de R$ 29,90/m <i class="bi bi-arrow-right"></i></span>
-                    <div class="mt-2"><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i></div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card-category p-4 text-center product-showcase">
-                    <div class="category-icon"><i class="bi bi-tshirt-fill"></i> <i class="bi bi-person-walking"></i></div>
-                    <h4 class="fw-bold"><i class="bi bi-bicycle"></i> Malha Fitness</h4>
-                    <p class="text-secondary">Alta elasticidade, ideal para moda praia e esportes. Cores vibrantes.</p>
-                    <span class="badge bg-light text-dark"><i class="bi bi-cash"></i> A partir de R$ 39,90/m</span>
-                    <div class="mt-2"><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-half text-warning"></i></div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card-category p-4 text-center product-showcase">
-                    <div class="category-icon"><i class="bi bi-palette-fill"></i> <i class="bi bi-brush"></i></div>
-                    <h4 class="fw-bold"><i class="bi bi-jeans"></i> Jeans Premium</h4>
-                    <p class="text-secondary">Lavagens variadas, ideal para calças, jaquetas e artesanato.</p>
-                    <span class="badge bg-light text-dark"><i class="bi bi-cash"></i> A partir de R$ 44,90/m</span>
-                    <div class="mt-2"><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star text-warning"></i></div>
-                </div>
-            </div>
-        </div>
-        <div class="row mt-4 g-4">
-            <div class="col-md-4">
-                <div class="card-category p-4 text-center product-showcase">
-                    <div class="category-icon"><i class="bi bi-wind"></i> <i class="bi bi-cloud-sun"></i></div>
-                    <h4 class="fw-bold"><i class="bi bi-tree-fill"></i> Linho Natural</h4>
-                    <p class="text-secondary">Tecido leve e respirável, perfeito para roupas de verão e decoração.</p>
-                    <span class="badge bg-light text-dark"><i class="bi bi-cash"></i> A partir de R$ 59,90/m</span>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card-category p-4 text-center product-showcase">
-                    <div class="category-icon"><i class="bi bi-gem"></i> <i class="bi bi-diamond-fill"></i></div>
-                    <h4 class="fw-bold"><i class="bi bi-sparkles"></i> Cetim e Seda</h4>
-                    <p class="text-secondary">Brilho sofisticado para eventos, lingerie e moda festa.</p>
-                    <span class="badge bg-light text-dark"><i class="bi bi-cash"></i> A partir de R$ 49,90/m</span>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card-category p-4 text-center product-showcase">
-                    <div class="category-icon"><i class="bi bi-funnel-fill"></i> <i class="bi bi-grid-3x3"></i></div>
-                    <h4 class="fw-bold"><i class="bi bi-threads"></i> Linha e Aviamentos</h4>
-                    <p class="text-secondary">Zíperes, botões, linhas de costura e tudo para seu projeto.</p>
-                    <span class="badge bg-light text-dark"><i class="bi bi-cash"></i> Consulte valores</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- SOBRE + INFORMAÇÕES DA EMPRESA COM ÍCONES -->
-<section id="sobre" class="py-5 bg-light">
-    <div class="container">
-        <div class="row g-5 align-items-center">
-            <div class="col-lg-6">
-                <span class="badge bg-secondary bg-opacity-10 text-secondary py-2 px-3 mb-2 rounded-pill"><i class="bi bi-building-fill"></i> <i class="bi bi-cup-hot-fill"></i> Tradição e Confiança</span>
-                <h2 class="fw-bold mb-3"><i class="bi bi-shop-fill"></i> Niazi Chohfi: referência em tecidos na Mooca <i class="bi bi-geo-alt-fill"></i></h2>
-                <p class="lead text-secondary"><i class="bi bi-chat-quote-fill"></i> Há mais de uma década, levando moda, criatividade e qualidade para São Paulo. Somos uma empresa familiar que valoriza o atendimento personalizado.</p>
-                <div class="info-block mt-4">
-                    <div class="row g-3">
-                        <div class="col-sm-6">
-                            <i class="bi bi-calendar-check-fill me-2" style="color:#8B5E3C;"></i> <i class="bi bi-clock-history"></i> <strong>Data Situação Cadastral:</strong><br> 08/01/2013
-                        </div>
-                        <div class="col-sm-6">
-                            <i class="bi bi-qr-code-scan me-2"></i> <i class="bi bi-card-text"></i> <strong>CNPJ:</strong><br> <span class="badge-cnpj d-inline-block mt-1">06.976.612/0005-24</span>
-                        </div>
-                        <div class="col-12">
-                            <i class="bi bi-geo-alt-fill me-2" style="color:#8B5E3C;"></i> <i class="bi bi-house-fill"></i> <strong>Endereço da Loja:</strong><br>
-                            Rua Cadiriri, 629 - Parque da Mooca, São Paulo - SP, 03109-040
-                        </div>
-                        <div class="col-12">
-                            <i class="bi bi-telephone-fill me-2"></i> <i class="bi bi-whatsapp"></i> <strong>Central de Vendas:</strong><br> (11) 3312-3312
-                        </div>
-                    </div>
-                </div>
-                <p class="mt-4 text-secondary"><i class="bi bi-pin-map-fill"></i> <i class="bi bi-car-front-fill"></i> Venha nos visitar no coração do Parque da Mooca! Estacionamento fácil e ambiente acolhedor para você escolher seus tecidos com calma.</p>
-            </div>
-            <div class="col-lg-6">
-                <div class="position-relative">
-                    <div class="bg-white p-4 rounded-4 shadow-sm">
-                        <i class="bi bi-cup-hot-fill fs-1 text-warning"></i> <i class="bi bi-people-fill fs-1 text-primary"></i>
-                        <h4 class="mt-2"><i class="bi bi-house-heart-fill"></i> Ambiente Familiar <i class="bi bi-balloon-heart-fill"></i></h4>
-                        <p>Nosso time está sempre pronto para ajudar desde a escolha do tecido até dicas de modelagem. Mais de 5 mil clientes atendidos presencialmente e online.</p>
-                        <div class="d-flex gap-3 mt-3">
-                            <i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i>
-                            <span class="fw-semibold"><i class="bi bi-google"></i> 5.0 (Google Avaliações)</span>
-                        </div>
-                    </div>
-                    <div class="mt-4 text-center">
-                        <i class="bi bi-house-heart-fill fs-1 text-primary"></i> <i class="bi bi-tree-fill fs-1 text-success"></i>
-                        <p class="mt-2"><i class="bi bi-geo-alt-fill"></i> Parque da Mooca - Zona Leste de SP <i class="bi bi-pin-map-fill"></i></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- FRASE DE DESTAQUE + OFERTA COM ÍCONES -->
-<div class="container py-5">
-    <div class="row bg-white rounded-4 p-4 shadow-sm align-items-center" style="background: linear-gradient(120deg, #FFF2E6 0%, #FFE8D9 100%);">
-        <div class="col-md-8">
-            <h3><i class="bi bi-megaphone-fill me-2" style="color: #8B5E3C;"></i> <i class="bi bi-headset"></i> Atendimento especial para costureiras e pequenos negócios <i class="bi bi-briefcase-fill"></i></h3>
-            <p><i class="bi bi-tags-fill"></i> Descontos progressivos para compras acima de 50 metros. Consulte nossa tabela de preços para atacado e revendedores.</p>
-            <span class="badge bg-primary text-white p-2"> <i class="bi bi-clock-fill"></i> Aberto de segunda a sábado - 9h às 19h </span>
-            <span class="badge bg-primary text-white p-2 ms-2"> <i class="bi bi-credit-card-fill"></i> Aceitamos todas as bandeiras <i class="bi bi-bank2"></i></span>
-        </div>
-        <div class="col-md-4 text-md-end">
-            <a href="#contato" class="btn btn-primary-custom"><i class="bi bi-envelope-paper-fill"></i> <i class="bi bi-send-fill"></i> Peça seu orçamento</a>
-        </div>
-    </div>
-</div>
-
-<!-- CONTATO COM MUITOS ÍCONES -->
-<section id="contato" class="py-5 bg-white">
-    <div class="container">
-        <div class="row g-5">
-            <div class="col-lg-5">
-                <h2 class="fw-bold mb-3"><i class="bi bi-envelope-paper-heart-fill"></i> <i class="bi bi-chat-heart-fill"></i> Fale Conosco <i class="bi bi-emoji-smile-fill"></i></h2>
-                <p><i class="bi bi-megaphone"></i> Estamos prontos para atender, tirar dúvidas sobre tecidos, estoque ou fazer encomendas especiais.</p>
-                <div class="contact-info mt-4">
-                    <p><i class="bi bi-telephone-inbound-fill"></i> <i class="bi bi-whatsapp"></i> <strong>Telefone / WhatsApp:</strong> (11) 3312-3312</p>
-                    <p><i class="bi bi-envelope-fill"></i> <i class="bi bi-inbox-fill"></i> <strong>E-mail:</strong> contato@niazichohfitecidos.com.br</p>
-                    <p><i class="bi bi-geo-alt-fill"></i> <i class="bi bi-shop"></i> <strong>Loja Física:</strong> Rua Cadiriri, 629 - Parque da Mooca, São Paulo - SP</p>
-                    <hr>
-                    <div class="mt-3">
-                        <i class="bi bi-clock-history"></i> <i class="bi bi-calendar-week"></i> <strong>Horário de Funcionamento:</strong><br>
-                        Segunda a Sexta: 9h às 19h | Sábado: 9h às 16h
-                    </div>
-                    <div class="mt-3 d-flex gap-3 fs-3">
-                        <a href="#" class="text-dark"><i class="bi bi-whatsapp" style="color:#25D366;"></i></a>
-                        <a href="#" class="text-dark"><i class="bi bi-instagram" style="color:#E4405F;"></i></a>
-                        <a href="#" class="text-dark"><i class="bi bi-facebook" style="color:#1877F2;"></i></a>
-                        <a href="#" class="text-dark"><i class="bi bi-pinterest" style="color:#E60023;"></i></a>
-                        <a href="#" class="text-dark"><i class="bi bi-tiktok"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-7">
-                <div class="card shadow-sm border-0 rounded-4 p-4">
-                    <h4 class="mb-3"><i class="bi bi-chat-right-text-fill"></i> <i class="bi bi-pencil-square"></i> Envie sua mensagem <i class="bi bi-send-fill"></i></h4>
-                    <form>
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <label class="form-label"><i class="bi bi-person-fill"></i> Nome completo</label>
-                                <input type="text" class="form-control" placeholder="Seu nome">
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label"><i class="bi bi-whatsapp"></i> Telefone / WhatsApp</label>
-                                <input type="tel" class="form-control" placeholder="(11) 99999-9999">
-                            </div>
-                            <div class="col-12">
-                                <label class="form-label"><i class="bi bi-envelope-fill"></i> E-mail</label>
-                                <input type="email" class="form-control" placeholder="email@exemplo.com">
-                            </div>
-                            <div class="col-12">
-                                <label class="form-label"><i class="bi bi-chat-fill"></i> Mensagem</label>
-                                <textarea rows="4" class="form-control" placeholder="Qual tecido você procura? Gostaria de saber preços, etc."></textarea>
-                            </div>
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-primary-custom text-white px-5 py-2"><i class="bi bi-send-fill"></i> <i class="bi bi-envelope-paper-fill"></i> Enviar mensagem</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- FOOTER COM ÍCONES -->
-<footer class="footer pt-5 pb-4">
-    <div class="container">
-        <div class="row gy-4">
-            <div class="col-md-5">
-                <div class="d-flex align-items-center mb-3">
-                    <i class="bi bi-scissors fs-1 me-2 text-secondary"></i>
-                    <i class="bi bi-threads-fill fs-1 me-2 text-secondary"></i>
-                    <span class="fs-3 fw-bold text-white">Niazi<span class="text-secondary">Chohfi</span> Tecidos</span>
-                </div>
-                <p><i class="bi bi-shield-check-fill"></i> <i class="bi bi-patch-check-fill"></i> Mais de uma década de tradição no ramo têxtil. Qualidade, variedade e atendimento especializado.</p>
-                <div><i class="bi bi-c-circle"></i> 2025 Niazi Chohfi Têxtil Ltda. - Todos os direitos reservados.</div>
-            </div>
-            <div class="col-md-3">
-                <h5 class="fw-bold text-white"><i class="bi bi-link-45deg"></i> <i class="bi bi-compass-fill"></i> Navegação</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#home"><i class="bi bi-house-door-fill"></i> Início</a></li>
-                    <li><a href="#produtos"><i class="bi bi-grid-fill"></i> Produtos</a></li>
-                    <li><a href="#sobre"><i class="bi bi-building-fill"></i> Sobre a empresa</a></li>
-                    <li><a href="#contato"><i class="bi bi-envelope-fill"></i> Contato</a></li>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-wifi"></i>Globalrio Telecom
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#planos">Planos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato">Contato</a>
+                    </li>
                 </ul>
             </div>
-            <div class="col-md-4">
-                <h5 class="fw-bold text-white"><i class="bi bi-info-circle-fill"></i> Informações Legais</h5>
-                <p class="small mb-1"><i class="bi bi-card-text"></i> <strong>CNPJ:</strong> 06.976.612/0005-24</p>
-                <p class="small mb-1"><i class="bi bi-building-fill"></i> <strong>Razão Social:</strong> Niazi Chohfi Textil Ltda.</p>
-                <p class="small mb-1"><i class="bi bi-calendar-fill"></i> <strong>Data Cadastro:</strong> 08/01/2013</p>
-                <p class="small"><i class="bi bi-geo-alt-fill"></i> <strong>Endereço:</strong> Rua Cadiriri, 629 - Parque da Mooca, SP</p>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 fade-in-up">
+                    <div class="speed-badge">
+                        <i class="bi bi-lightning-charge-fill"></i> Instalação em até 24h
+                    </div>
+                    <h1>Internet de Alta Velocidade para sua Casa ou Empresa</h1>
+                    <p>Conecte-se ao mundo com a qualidade e velocidade que você merece. Navegue sem limites com a Globalrio Telecom.</p>
+                    <a href="#planos" class="btn btn-primary btn-lg">
+                        <i class="bi bi-arrow-right-circle"></i> Ver Planos
+                    </a>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 400'><rect width='500' height='400' fill='transparent'/><circle cx='250' cy='200' r='120' fill='none' stroke='rgba(255,255,255,0.1)' stroke-width='40'/><circle cx='250' cy='200' r='80' fill='none' stroke='rgba(255,255,255,0.15)' stroke-width='30'/><circle cx='250' cy='200' r='40' fill='rgba(255,255,255,0.2)' stroke='%2300D4FF' stroke-width='3'/><path d='M150 250 L250 120 L350 250' stroke='%2300D4FF' stroke-width='4' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>" alt="Internet" class="img-fluid">
+                </div>
             </div>
         </div>
-        <hr class="my-4 bg-secondary">
-        <div class="text-center small">
-            <i class="bi bi-truck"></i> Entregamos para toda Grande São Paulo | Retire na loja sem custo
-            <br><i class="bi bi-heart-fill text-danger"></i> Tradição e qualidade desde 2013 <i class="bi bi-heart-fill text-danger"></i>
-        </div>
-    </div>
-</footer>
+    </section>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if(href === "#" || href === "") return;
-            const target = document.querySelector(href);
-            if(target) {
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-card fade-in-up">
+                        <i class="bi bi-wifi feature-icon"></i>
+                        <h3>Conexão Estável</h3>
+                        <p>Fibra óptica de última geração para uma conexão estável e de alta performance.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card fade-in-up">
+                        <i class="bi bi-shield-check feature-icon"></i>
+                        <h3>Segurança Total</h3>
+                        <p>Proteção avançada para sua navegação com monitoramento 24 horas.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card fade-in-up">
+                        <i class="bi bi-headset feature-icon"></i>
+                        <h3>Suporte 24h</h3>
+                        <p>Equipe técnica especializada pronta para atender você a qualquer momento.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plans Section -->
+    <section id="planos" class="plans">
+        <div class="container">
+            <h2 class="text-center mb-5" style="color: var(--primary-color); font-weight: 700;">Nossos Planos</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="plan-card fade-in-up">
+                        <h3 class="plan-title">Básico</h3>
+                        <div class="plan-speed">100<span>Mega</span></div>
+                        <ul class="plan-features">
+                            <li><i class="bi bi-check-circle-fill"></i> Download 100 Mbps</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Upload 50 Mbps</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Wi-Fi Grátis</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Suporte Técnico</li>
+                            <li><i class="bi bi-x-circle"></i> Instalação Grátis</li>
+                        </ul>
+                        <a href="#contato" class="btn btn-outline-primary btn-lg">Contratar</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="plan-card popular fade-in-up" style="position: relative;">
+                        <span class="badge-popular">Mais Popular</span>
+                        <h3 class="plan-title">Premium</h3>
+                        <div class="plan-speed">300<span>Mega</span></div>
+                        <ul class="plan-features">
+                            <li><i class="bi bi-check-circle-fill"></i> Download 300 Mbps</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Upload 150 Mbps</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Wi-Fi Grátis</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Suporte 24h</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Instalação Grátis</li>
+                        </ul>
+                        <a href="#contato" class="btn btn-primary btn-lg">Contratar</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="plan-card fade-in-up">
+                        <h3 class="plan-title">Empresarial</h3>
+                        <div class="plan-speed">500<span>Mega</span></div>
+                        <ul class="plan-features">
+                            <li><i class="bi bi-check-circle-fill"></i> Download 500 Mbps</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Upload 250 Mbps</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Wi-Fi Enterprise</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Suporte Prioritário</li>
+                            <li><i class="bi bi-check-circle-fill"></i> IP Fixo</li>
+                        </ul>
+                        <a href="#contato" class="btn btn-outline-primary btn-lg">Contratar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="about">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="about-content fade-in-up">
+                        <h2><i class="bi bi-building"></i> Sobre a Globalrio Telecom</h2>
+                        <p>A Globalrio Telecomunicações LTDA é uma empresa comprometida com a excelência em conectividade, oferecendo soluções de internet de alta velocidade para residências e empresas no Rio de Janeiro.</p>
+                        <p>Com infraestrutura moderna e equipe qualificada, garantimos a melhor experiência de navegação para nossos clientes.</p>
+                        
+                        <div class="company-info">
+                            <p><strong><i class="bi bi-calendar-check"></i> Data de Abertura:</strong> 27/01/2020</p>
+                            <p><strong><i class="bi bi-card-text"></i> CNPJ:</strong> 36.138.973/0001-39</p>
+                            <p><strong><i class="bi bi-buildings"></i> Razão Social:</strong> Globalrio Telecomunicacoes LTDA</p>
+                            <p><strong><i class="bi bi-geo-alt-fill"></i> Endereço:</strong> Estrada Do Viegas, 00236 - Senador Camara</p>
+                            <p><strong><i class="bi bi-pin-map"></i> Cidade:</strong> Rio de Janeiro - RJ</p>
+                            <p><strong><i class="bi bi-mailbox"></i> CEP:</strong> 21832-006</p>
+                            <p><strong><i class="bi bi-telephone-fill"></i> Telefone:</strong> (21) 3469-0829</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="contact">
+        <div class="container">
+            <h2 class="text-center"><i class="bi bi-chat-dots"></i> Entre em Contato</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="contact-info fade-in-up">
+                        <h3>Fale Conosco</h3>
+                        <p><i class="bi bi-telephone-fill"></i> (21) 3469-0829</p>
+                        <p><i class="bi bi-envelope-fill"></i> contato@globalriotelecom.com.br</p>
+                        <p><i class="bi bi-geo-alt-fill"></i> Estrada Do Viegas, 00236 - Senador Camara, Rio de Janeiro - RJ</p>
+                        <p><i class="bi bi-clock"></i> Segunda a Sexta: 8h às 18h | Sábado: 8h às 12h</p>
+                        
+                        <div class="social-icons">
+                            <a href="#"><i class="bi bi-facebook"></i></a>
+                            <a href="#"><i class="bi bi-instagram"></i></a>
+                            <a href="#"><i class="bi bi-whatsapp"></i></a>
+                            <a href="#"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                        
+                        <a href="https://wa.me/552134690829" class="btn btn-light btn-lg mt-3">
+                            <i class="bi bi-whatsapp"></i> Chamar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Globalrio Telecomunicações LTDA. Todos os direitos reservados.</p>
+            <p>CNPJ: 36.138.973/0001-39 | Desenvolvido com ❤️ no Rio de Janeiro</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Smooth scrolling para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
-    });
-</script>
+        
+        // Animação de fade in para elementos quando aparecem na tela
+        const observerOptions = {
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
