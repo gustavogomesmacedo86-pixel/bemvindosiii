@@ -1,595 +1,143 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Globalrio Telecomunicações - Internet de Alta Velocidade no Rio de Janeiro</title>
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2300526B'/><path d='M30 70 L50 30 L70 70' stroke='%2300D4FF' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/><circle cx='50' cy='55' r='8' fill='%2300D4FF'/></svg>">
-    
-    <style>
-        :root {
-            --primary-color: #00526B;
-            --secondary-color: #00D4FF;
-            --accent-color: #00A3CC;
-            --light-bg: #f0f8fa;
-            --dark-text: #1a1a2e;
-            --white-text: #ffffff;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--dark-text);
-        }
-        
-        /* Navbar */
-        .navbar {
-            background: linear-gradient(135deg, var(--primary-color), #003d4f);
-            padding: 15px 0;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.3);
-        }
-        
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: white !important;
-        }
-        
-        .navbar-brand i {
-            color: var(--secondary-color);
-            margin-right: 10px;
-        }
-        
-        .nav-link {
-            color: white !important;
-            margin: 0 10px;
-            transition: color 0.3s;
-        }
-        
-        .nav-link:hover {
-            color: var(--secondary-color) !important;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #003d4f 0%, #00526B 50%, #00A3CC 100%);
-            color: white;
-            padding: 100px 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.05)" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,208C1248,224,1344,192,1392,176L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
-            background-size: cover;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .hero .btn-primary {
-            background-color: var(--secondary-color);
-            border-color: var(--secondary-color);
-            color: var(--primary-color);
-            font-weight: 600;
-            padding: 12px 30px;
-            transition: all 0.3s;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .hero .btn-primary:hover {
-            background-color: white;
-            border-color: white;
-            transform: translateY(-2px);
-        }
-        
-        .speed-badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(10px);
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            border: 1px solid rgba(255,255,255,0.2);
-            z-index: 1;
-            position: relative;
-        }
-        
-        .speed-badge i {
-            color: #00ff88;
-            margin-right: 5px;
-        }
-        
-        /* Features Section */
-        .features {
-            padding: 80px 0;
-            background: var(--light-bg);
-        }
-        
-        .feature-card {
-            text-align: center;
-            padding: 30px;
-            background: white;
-            border-radius: 15px;
-            margin: 20px 0;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-        
-        .feature-icon {
-            font-size: 2.5rem;
-            color: var(--accent-color);
-            margin-bottom: 20px;
-        }
-        
-        .feature-card h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-        }
-        
-        /* Plans Section */
-        .plans {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #f9f9f9, #ffffff);
-        }
-        
-        .plan-card {
-            background: white;
-            border-radius: 15px;
-            padding: 40px 30px;
-            margin: 20px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            text-align: center;
-            transition: all 0.3s;
-            border: 2px solid transparent;
-        }
-        
-        .plan-card.popular {
-            border-color: var(--secondary-color);
-            transform: scale(1.05);
-            background: linear-gradient(135deg, white, #f0fdff);
-        }
-        
-        .plan-card:hover {
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-        
-        .plan-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        
-        .plan-speed {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--accent-color);
-            margin: 20px 0;
-        }
-        
-        .plan-speed span {
-            font-size: 1rem;
-            color: #666;
-        }
-        
-        .plan-features {
-            list-style: none;
-            padding: 0;
-            margin: 20px 0;
-        }
-        
-        .plan-features li {
-            margin: 10px 0;
-            color: #555;
-        }
-        
-        .plan-features i {
-            color: #00ff88;
-            margin-right: 5px;
-        }
-        
-        .badge-popular {
-            position: absolute;
-            top: -15px;
-            right: 30px;
-            background: var(--secondary-color);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-        }
-        
-        /* About Section */
-        .about {
-            padding: 80px 0;
-            background: var(--light-bg);
-        }
-        
-        .about-content {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        }
-        
-        .about-content h2 {
-            color: var(--primary-color);
-            font-weight: 700;
-            margin-bottom: 30px;
-        }
-        
-        .company-info {
-            margin-top: 30px;
-            padding: 20px;
-            background: var(--light-bg);
-            border-radius: 10px;
-            border-left: 4px solid var(--accent-color);
-        }
-        
-        .company-info i {
-            color: var(--accent-color);
-            margin-right: 10px;
-            width: 20px;
-        }
-        
-        /* Contact Section */
-        .contact {
-            padding: 80px 0;
-            background: linear-gradient(135deg, var(--primary-color), #003d4f);
-            color: white;
-        }
-        
-        .contact-info {
-            background: rgba(255,255,255,0.1);
-            padding: 30px;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-        
-        .contact h2 {
-            color: white;
-            font-weight: 700;
-            margin-bottom: 30px;
-        }
-        
-        .contact p {
-            margin: 15px 0;
-        }
-        
-        .contact i {
-            color: var(--secondary-color);
-            margin-right: 10px;
-            font-size: 1.2rem;
-        }
-        
-        .social-icons {
-            margin-top: 20px;
-        }
-        
-        .social-icons a {
-            color: white;
-            font-size: 1.5rem;
-            margin: 0 10px;
-            transition: color 0.3s;
-        }
-        
-        .social-icons a:hover {
-            color: var(--secondary-color);
-        }
-        
-        /* Footer */
-        footer {
-            background: #002a35;
-            color: white;
-            padding: 30px 0;
-            text-align: center;
-        }
-        
-        footer p {
-            margin: 0;
-            color: #aaa;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .plan-card.popular {
-                transform: scale(1);
-            }
-            
-            .hero {
-                padding: 60px 0;
-            }
-        }
-        
-        /* Animation */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .fade-in-up {
-            animation: fadeInUp 0.6s ease-out;
-        }
-    </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Segunda Via de Fatura - Energia Online</title>
+<meta name="description" content="Solicite sua segunda via de fatura de energia online pelo WhatsApp. Atendimento rápido e seguro." />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+<style>
+:root{--green-900:#064e3b;--green-800:#065f46;--green-700:#047857;--green-500:#10b981;--whats:#25d366;--whats-hover:#1ebe5b}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#334155;background:#fff}
+.text-success-emphasis{color:var(--green-800)!important}
+.logo-badge{width:36px;height:36px;border-radius:.5rem;display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#34d399,#047857)}
+.logo-badge i{font-size:1.1rem;color:#fff}
+.nav-item-top{color:var(--green-800);text-decoration:none}
+.nav-item-top:hover{color:var(--green-500)}
+.btn-success-dark{background:var(--green-900);color:#fff;border:none}
+.btn-success-dark:hover{background:var(--green-800);color:#fff}
+.bg-dark-green{background:var(--green-900)!important}
+.divider-v{width:1px;height:20px;background:rgba(255,255,255,.2)}
+.btn-whatsapp{background:var(--whats);color:#fff;border:none}
+.btn-whatsapp:hover{background:var(--whats-hover);color:#fff}
+.hero-img{position:relative;height:280px;overflow:hidden;background:#1f2937}
+@media(min-width:768px){.hero-img{height:440px}}
+.hero-img img{display:block;width:100%;height:100%;object-fit:cover}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 60%,rgba(0,0,0,.2))}
+.service-cards-wrap{margin-top:-40px;position:relative;z-index:2}
+@media(min-width:768px){.service-cards-wrap{margin-top:-64px}}
+.service-card{display:flex;flex-direction:column;align-items:flex-start;background:#fff;border-radius:.75rem;padding:1.25rem;min-height:140px;text-decoration:none;color:#1e293b;box-shadow:0 10px 25px rgba(0,0,0,.08);transition:transform .2s,box-shadow .2s}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.12)}
+.service-card i{font-size:1.75rem;color:var(--green-700);margin-bottom:1rem}
+.service-card span{font-size:.9rem;font-weight:600;line-height:1.3}
+.highlight-dark{background:linear-gradient(135deg,#1e293b,#0f172a)}
+.step-card{background:#fff;border:1px solid #e2e8f0;border-radius:.75rem;padding:1.5rem;box-shadow:0 1px 2px rgba(0,0,0,.04);height:100%}
+.step-num{width:40px;height:40px;border-radius:50%;background:var(--green-500);color:#fff;font-weight:700;font-size:1.1rem;display:flex;align-items:center;justify-content:center}
+.step-card h3{font-size:1.1rem;font-weight:700;color:#0f172a;margin-top:1rem}
+.step-card p{font-size:.875rem;color:#64748b;margin-top:.5rem;margin-bottom:0}
+</style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <i class="bi bi-wifi"></i>Globalrio Telecom
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#inicio">Início</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#planos">Planos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#sobre">Sobre</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contato">Contato</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+
+<header class="bg-white">
+  <div class="container d-flex align-items-center justify-content-between py-3">
+    <a href="/" class="d-flex align-items-center gap-2 text-decoration-none">
+      <span class="logo-badge"><i class="bi bi-lightning-charge-fill"></i></span>
+      <span class="fw-bold fs-4 text-success-emphasis">Agência Virtual</span>
+    </a>
+    <nav class="d-none d-lg-flex gap-4 small fw-semibold">
+      <a href="#" class="nav-item-top">Quem somos <i class="bi bi-chevron-down small"></i></a>
+      <a href="#" class="nav-item-top">Serviços <i class="bi bi-chevron-down small"></i></a>
+      <a href="#" class="nav-item-top">Sustentabilidade <i class="bi bi-chevron-down small"></i></a>
+      <a href="#" class="nav-item-top">Inovação <i class="bi bi-chevron-down small"></i></a>
+      <a href="#" class="nav-item-top">Fale Conosco <i class="bi bi-chevron-down small"></i></a>
     </nav>
+    <div class="d-flex align-items-center gap-3">
+      <i class="bi bi-search d-none d-md-block text-secondary"></i>
+      <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn btn-success-dark d-none d-md-inline-flex align-items-center gap-2">
+        <i class="bi bi-box-arrow-in-right"></i> Área do cliente
+      </a>
+    </div>
+  </div>
+</header>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="hero">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 fade-in-up">
-                    <div class="speed-badge">
-                        <i class="bi bi-lightning-charge-fill"></i> Instalação em até 24h
-                    </div>
-                    <h1>Internet de Alta Velocidade para sua Casa ou Empresa</h1>
-                    <p>Conecte-se ao mundo com a qualidade e velocidade que você merece. Navegue sem limites com a Globalrio Telecom.</p>
-                    <a href="#planos" class="btn btn-primary btn-lg">
-                        <i class="bi bi-arrow-right-circle"></i> Ver Planos
-                    </a>
-                </div>
-                <div class="col-lg-6 text-center">
-                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 400'><rect width='500' height='400' fill='transparent'/><circle cx='250' cy='200' r='120' fill='none' stroke='rgba(255,255,255,0.1)' stroke-width='40'/><circle cx='250' cy='200' r='80' fill='none' stroke='rgba(255,255,255,0.15)' stroke-width='30'/><circle cx='250' cy='200' r='40' fill='rgba(255,255,255,0.2)' stroke='%2300D4FF' stroke-width='3'/><path d='M150 250 L250 120 L350 250' stroke='%2300D4FF' stroke-width='4' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>" alt="Internet" class="img-fluid">
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="bg-dark-green text-white">
+  <div class="container d-flex align-items-center justify-content-between">
+    <div class="d-flex align-items-center gap-4 py-2 small fw-medium overflow-auto">
+      <button class="btn btn-link text-white p-0 fw-bold text-decoration-none">SP / MS <i class="bi bi-chevron-down small"></i></button>
+      <span class="d-none d-sm-block divider-v"></span>
+      <a href="#" class="text-white text-decoration-none border-bottom border-2 border-white pb-1 fw-bold">Início</a>
+      <a href="#" class="text-white-50 text-decoration-none">Sua Casa</a>
+      <a href="#" class="text-white-50 text-decoration-none">Seu Negócio</a>
+      <a href="#" class="text-white-50 text-decoration-none">Poder Público</a>
+    </div>
+    <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn btn-whatsapp d-none d-md-inline-flex align-items-center gap-2 my-2">
+      <i class="bi bi-whatsapp"></i> Serviços on-line
+    </a>
+  </div>
+</div>
 
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="feature-card fade-in-up">
-                        <i class="bi bi-wifi feature-icon"></i>
-                        <h3>Conexão Estável</h3>
-                        <p>Fibra óptica de última geração para uma conexão estável e de alta performance.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-card fade-in-up">
-                        <i class="bi bi-shield-check feature-icon"></i>
-                        <h3>Segurança Total</h3>
-                        <p>Proteção avançada para sua navegação com monitoramento 24 horas.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-card fade-in-up">
-                        <i class="bi bi-headset feature-icon"></i>
-                        <h3>Suporte 24h</h3>
-                        <p>Equipe técnica especializada pronta para atender você a qualquer momento.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="position-relative">
+  <div class="hero-img">
+    <img src="https://images.unsplash.com/photo-1444723121867-7a241cacace9?w=1600&q=80" alt="Vista panorâmica da cidade" />
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="container service-cards-wrap">
+    <div class="row g-3">
+      <div class="col-6 col-sm-3 col-lg"><a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="service-card"><i class="bi bi-upc-scan"></i><span>Segunda Via<br>e Débito</span></a></div>
+      <div class="col-6 col-sm-3 col-lg"><a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="service-card"><i class="bi bi-lightbulb"></i><span>Falta de<br>Energia</span></a></div>
+      <div class="col-6 col-sm-3 col-lg"><a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="service-card"><i class="bi bi-file-earmark-text"></i><span>Canais de<br>Atendimento</span></a></div>
+      <div class="col-6 col-sm-3 col-lg"><a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="service-card"><i class="bi bi-credit-card"></i><span>Parcelamento<br>de Débitos</span></a></div>
+      <div class="col-6 col-sm-3 col-lg"><a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="service-card"><i class="bi bi-person"></i><span>Troca de<br>Nome da Conta</span></a></div>
+      <div class="col-6 col-sm-3 col-lg"><a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="service-card"><i class="bi bi-arrow-up-right"></i><span>Todos os<br>Serviços</span></a></div>
+      <div class="col-6 col-sm-3 col-lg"><a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="service-card"><i class="bi bi-wallet2"></i><span>Pagamentos</span></a></div>
+    </div>
+  </div>
+</section>
 
-    <!-- Plans Section -->
-    <section id="planos" class="plans">
-        <div class="container">
-            <h2 class="text-center mb-5" style="color: var(--primary-color); font-weight: 700;">Nossos Planos</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="plan-card fade-in-up">
-                        <h3 class="plan-title">Básico</h3>
-                        <div class="plan-speed">100<span>Mega</span></div>
-                        <ul class="plan-features">
-                            <li><i class="bi bi-check-circle-fill"></i> Download 100 Mbps</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Upload 50 Mbps</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Wi-Fi Grátis</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Suporte Técnico</li>
-                            <li><i class="bi bi-x-circle"></i> Instalação Grátis</li>
-                        </ul>
-                        <a href="#contato" class="btn btn-outline-primary btn-lg">Contratar</a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="plan-card popular fade-in-up" style="position: relative;">
-                        <span class="badge-popular">Mais Popular</span>
-                        <h3 class="plan-title">Premium</h3>
-                        <div class="plan-speed">300<span>Mega</span></div>
-                        <ul class="plan-features">
-                            <li><i class="bi bi-check-circle-fill"></i> Download 300 Mbps</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Upload 150 Mbps</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Wi-Fi Grátis</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Suporte 24h</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Instalação Grátis</li>
-                        </ul>
-                        <a href="#contato" class="btn btn-primary btn-lg">Contratar</a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="plan-card fade-in-up">
-                        <h3 class="plan-title">Empresarial</h3>
-                        <div class="plan-speed">500<span>Mega</span></div>
-                        <ul class="plan-features">
-                            <li><i class="bi bi-check-circle-fill"></i> Download 500 Mbps</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Upload 250 Mbps</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Wi-Fi Enterprise</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Suporte Prioritário</li>
-                            <li><i class="bi bi-check-circle-fill"></i> IP Fixo</li>
-                        </ul>
-                        <a href="#contato" class="btn btn-outline-primary btn-lg">Contratar</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="container mt-5">
+  <div class="row g-3">
+    <div class="col-md-8">
+      <div class="highlight-dark p-4 p-md-5 rounded-4 text-white h-100">
+        <h2 class="fw-bold display-6">Segunda via da fatura na palma da sua mão</h2>
+        <p class="mt-3 text-light" style="max-width:28rem">Solicite sua 2ª via de conta de luz pelo WhatsApp em poucos minutos. Receba o boleto atualizado direto no seu celular.</p>
+        <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn btn-whatsapp mt-3 d-inline-flex align-items-center gap-2 px-4 py-2 fw-bold"><i class="bi bi-whatsapp"></i> Solicitar pelo WhatsApp</a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="bg-dark-green p-4 p-md-5 rounded-4 text-white h-100">
+        <h3 class="fw-bold">Tarifa</h3>
+        <p class="mt-2 small text-white-50">Saiba como funciona a tarifa de energia e tire suas dúvidas com o nosso atendimento.</p>
+        <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="text-success fw-bold text-decoration-none mt-3 d-inline-block">Saiba mais →</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- About Section -->
-    <section id="sobre" class="about">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="about-content fade-in-up">
-                        <h2><i class="bi bi-building"></i> Sobre a Globalrio Telecom</h2>
-                        <p>A Globalrio Telecomunicações LTDA é uma empresa comprometida com a excelência em conectividade, oferecendo soluções de internet de alta velocidade para residências e empresas no Rio de Janeiro.</p>
-                        <p>Com infraestrutura moderna e equipe qualificada, garantimos a melhor experiência de navegação para nossos clientes.</p>
-                        
-                        <div class="company-info">
-                            <p><strong><i class="bi bi-calendar-check"></i> Data de Abertura:</strong> 27/01/2020</p>
-                            <p><strong><i class="bi bi-card-text"></i> CNPJ:</strong> 36.138.973/0001-39</p>
-                            <p><strong><i class="bi bi-buildings"></i> Razão Social:</strong> Globalrio Telecomunicacoes LTDA</p>
-                            <p><strong><i class="bi bi-geo-alt-fill"></i> Endereço:</strong> Estrada Do Viegas, 00236 - Senador Camara</p>
-                            <p><strong><i class="bi bi-pin-map"></i> Cidade:</strong> Rio de Janeiro - RJ</p>
-                            <p><strong><i class="bi bi-mailbox"></i> CEP:</strong> 21832-006</p>
-                            <p><strong><i class="bi bi-telephone-fill"></i> Telefone:</strong> (21) 3469-0829</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="container mt-5 pt-4">
+  <h2 class="text-center fw-bold text-success-emphasis">Como pedir sua 2ª via</h2>
+  <div class="row g-3 mt-4">
+    <div class="col-md-3 col-sm-6"><div class="step-card"><div class="step-num">1</div><h3>Clique no WhatsApp</h3><p>Toque em qualquer botão verde da página.</p></div></div>
+    <div class="col-md-3 col-sm-6"><div class="step-card"><div class="step-num">2</div><h3>Informe seu CPF</h3><p>Ou número da instalação para localizarmos.</p></div></div>
+    <div class="col-md-3 col-sm-6"><div class="step-card"><div class="step-num">3</div><h3>Receba o boleto</h3><p>Em PDF, com PIX e código de barras.</p></div></div>
+    <div class="col-md-3 col-sm-6"><div class="step-card"><div class="step-num">4</div><h3>Pague onde quiser</h3><p>Banco, app, lotérica ou PIX.</p></div></div>
+  </div>
+  <div class="text-center mt-5">
+    <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg rounded-pill fw-bold px-4 py-3 d-inline-flex align-items-center gap-2 shadow"><i class="bi bi-whatsapp fs-4"></i> Falar no WhatsApp agora</a>
+  </div>
+</section>
 
-    <!-- Contact Section -->
-    <section id="contato" class="contact">
-        <div class="container">
-            <h2 class="text-center"><i class="bi bi-chat-dots"></i> Entre em Contato</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="contact-info fade-in-up">
-                        <h3>Fale Conosco</h3>
-                        <p><i class="bi bi-telephone-fill"></i> (21) 3469-0829</p>
-                        <p><i class="bi bi-envelope-fill"></i> contato@globalriotelecom.com.br</p>
-                        <p><i class="bi bi-geo-alt-fill"></i> Estrada Do Viegas, 00236 - Senador Camara, Rio de Janeiro - RJ</p>
-                        <p><i class="bi bi-clock"></i> Segunda a Sexta: 8h às 18h | Sábado: 8h às 12h</p>
-                        
-                        <div class="social-icons">
-                            <a href="#"><i class="bi bi-facebook"></i></a>
-                            <a href="#"><i class="bi bi-instagram"></i></a>
-                            <a href="#"><i class="bi bi-whatsapp"></i></a>
-                            <a href="#"><i class="bi bi-linkedin"></i></a>
-                        </div>
-                        
-                        <a href="https://wa.me/552134690829" class="btn btn-light btn-lg mt-3">
-                            <i class="bi bi-whatsapp"></i> Chamar no WhatsApp
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<footer class="bg-dark-green text-white-50 text-center py-4 mt-5">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-center gap-2">
+      <i class="bi bi-lightning-charge-fill text-success"></i>
+      <span class="fw-bold text-white">Agência Virtual</span>
+    </div>
+    <p class="mt-2 mb-0 small">Atendimento via WhatsApp para segunda via de fatura de energia.</p>
+  </div>
+</footer>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Globalrio Telecomunicações LTDA. Todos os direitos reservados.</p>
-            <p>CNPJ: 36.138.973/0001-39 | Desenvolvido com ❤️ no Rio de Janeiro</p>
-        </div>
-    </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <script>
-        // Smooth scrolling para links internos
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-        
-        // Animação de fade in para elementos quando aparecem na tela
-        const observerOptions = {
-            threshold: 0.1
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-        
-        document.querySelectorAll('.fade-in-up').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-            observer.observe(el);
-        });
-    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
