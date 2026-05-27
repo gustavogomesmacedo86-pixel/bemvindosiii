@@ -1,159 +1,143 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Energia+ | Mais por você</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Segunda Via de Fatura - Energia Online</title>
+<meta name="description" content="Solicite sua segunda via de fatura de energia online pelo WhatsApp. Atendimento rápido e seguro." />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
 <style>
-  :root { --green:#1ca94c; --green-dark:#168a3e; --orange:#f0892a; }
-  body { font-family: 'Inter', sans-serif; }
-  .text-green { color: var(--green); }
-  .bg-green { background-color: var(--green); }
-  .bg-green-dark { background-color: var(--green-dark); }
-  .bg-orange { background-color: var(--orange); }
-  .hero-img { background-image: url('https://distribuidoraacoelba.lovable.app/assets/hero-woman-PUC67N2D.jpg'); background-size: cover; background-position: center; }
+:root{--green-900:#064e3b;--green-800:#065f46;--green-700:#047857;--green-500:#10b981;--whats:#25d366;--whats-hover:#1ebe5b}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#334155;background:#fff}
+.text-success-emphasis{color:var(--green-800)!important}
+.logo-badge{width:36px;height:36px;border-radius:.5rem;display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#34d399,#047857)}
+.logo-badge i{font-size:1.1rem;color:#fff}
+.nav-item-top{color:var(--green-800);text-decoration:none}
+.nav-item-top:hover{color:var(--green-500)}
+.btn-success-dark{background:var(--green-900);color:#fff;border:none}
+.btn-success-dark:hover{background:var(--green-800);color:#fff}
+.bg-dark-green{background:var(--green-900)!important}
+.divider-v{width:1px;height:20px;background:rgba(255,255,255,.2)}
+.btn-whatsapp{background:var(--whats);color:#fff;border:none}
+.btn-whatsapp:hover{background:var(--whats-hover);color:#fff}
+.hero-img{position:relative;height:280px;overflow:hidden;background:#1f2937}
+@media(min-width:768px){.hero-img{height:440px}}
+.hero-img img{display:block;width:100%;height:100%;object-fit:cover}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 60%,rgba(0,0,0,.2))}
+.service-cards-wrap{margin-top:-40px;position:relative;z-index:2}
+@media(min-width:768px){.service-cards-wrap{margin-top:-64px}}
+.service-card{display:flex;flex-direction:column;align-items:flex-start;background:#fff;border-radius:.75rem;padding:1.25rem;min-height:140px;text-decoration:none;color:#1e293b;box-shadow:0 10px 25px rgba(0,0,0,.08);transition:transform .2s,box-shadow .2s}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.12)}
+.service-card i{font-size:1.75rem;color:var(--green-700);margin-bottom:1rem}
+.service-card span{font-size:.9rem;font-weight:600;line-height:1.3}
+.highlight-dark{background:linear-gradient(135deg,#1e293b,#0f172a)}
+.step-card{background:#fff;border:1px solid #e2e8f0;border-radius:.75rem;padding:1.5rem;box-shadow:0 1px 2px rgba(0,0,0,.04);height:100%}
+.step-num{width:40px;height:40px;border-radius:50%;background:var(--green-500);color:#fff;font-weight:700;font-size:1.1rem;display:flex;align-items:center;justify-content:center}
+.step-card h3{font-size:1.1rem;font-weight:700;color:#0f172a;margin-top:1rem}
+.step-card p{font-size:.875rem;color:#64748b;margin-top:.5rem;margin-bottom:0}
 </style>
 </head>
-<body class="bg-white text-gray-800">
+<body>
 
-<!-- Reusable WhatsApp SVG (via <symbol>) -->
-<svg width="0" height="0" style="position:absolute">
-  <symbol id="wa" viewBox="0 0 24 24">
-    <path fill="currentColor" d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.599 5.393l-.999 3.648 3.889-.74zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-  </symbol>
-</svg>
-
-<header class="bg-green text-white">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-    <div class="flex items-center gap-2 font-bold text-xl">
-      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg>
-      Energia+
+<header class="bg-white">
+  <div class="container d-flex align-items-center justify-content-between py-3">
+    <a href="/" class="d-flex align-items-center gap-2 text-decoration-none">
+      <span class="logo-badge"><i class="bi bi-lightning-charge-fill"></i></span>
+      <span class="fw-bold fs-4 text-success-emphasis">Agência Virtual</span>
+    </a>
+    <nav class="d-none d-lg-flex gap-4 small fw-semibold">
+      <a href="#" class="nav-item-top">Quem somos <i class="bi bi-chevron-down small"></i></a>
+      <a href="#" class="nav-item-top">Serviços <i class="bi bi-chevron-down small"></i></a>
+      <a href="#" class="nav-item-top">Sustentabilidade <i class="bi bi-chevron-down small"></i></a>
+      <a href="#" class="nav-item-top">Inovação <i class="bi bi-chevron-down small"></i></a>
+      <a href="#" class="nav-item-top">Fale Conosco <i class="bi bi-chevron-down small"></i></a>
+    </nav>
+    <div class="d-flex align-items-center gap-3">
+      <i class="bi bi-search d-none d-md-block text-secondary"></i>
+      <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn btn-success-dark d-none d-md-inline-flex align-items-center gap-2">
+        <i class="bi bi-box-arrow-in-right"></i> Área do cliente
+      </a>
     </div>
-    <a href="#" class="bg-white text-gray-800 px-5 py-2 rounded-md font-medium text-sm shadow hover:bg-gray-100">Login →</a>
   </div>
 </header>
 
-<nav class="border-b border-gray-200">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex flex-wrap gap-6 text-sm font-semibold">
-    <a href="#" class="text-green">Início</a>
-    <a href="#" class="hover:text-green">Para Você ▾</a>
-    <a href="#" class="hover:text-green">Para a Unidade Consumidora ▾</a>
-    <a href="#" class="hover:text-green">Fale Conosco ▾</a>
-    <a href="#" class="hover:text-green">Mais Serviços ▾</a>
-  </div>
-</nav>
-
-<section class="max-w-7xl mx-auto px-6 mt-8">
-  <div class="grid md:grid-cols-2 rounded-2xl overflow-hidden">
-    <div class="hero-img min-h-[420px] flex items-end p-10">
-      <h1 class="text-white text-5xl font-bold drop-shadow">Mais por você</h1>
+<div class="bg-dark-green text-white">
+  <div class="container d-flex align-items-center justify-content-between">
+    <div class="d-flex align-items-center gap-4 py-2 small fw-medium overflow-auto">
+      <button class="btn btn-link text-white p-0 fw-bold text-decoration-none">SP / MS <i class="bi bi-chevron-down small"></i></button>
+      <span class="d-none d-sm-block divider-v"></span>
+      <a href="#" class="text-white text-decoration-none border-bottom border-2 border-white pb-1 fw-bold">Início</a>
+      <a href="#" class="text-white-50 text-decoration-none">Sua Casa</a>
+      <a href="#" class="text-white-50 text-decoration-none">Seu Negócio</a>
+      <a href="#" class="text-white-50 text-decoration-none">Poder Público</a>
     </div>
-    <div class="bg-green flex items-center justify-center p-8">
-      <div class="bg-white rounded-2xl p-8 w-full max-w-md shadow-lg">
-        <h2 class="text-2xl font-bold mb-3">Atendimento Virtual</h2>
-        <p class="text-gray-600 mb-6">Fale com a gente direto pelo WhatsApp, sem sair de casa.</p>
-        <a href="https://wa.me/message/QAJOFGIO6ILKN1" class="flex items-center justify-center gap-2 bg-green hover:bg-green-dark text-white font-semibold py-3 rounded-md">
-          <svg class="w-5 h-5 text-white"><use href="#wa"/></svg>
-          FALAR NO WHATSAPP
-        </a>
-        <p class="text-center text-sm text-gray-500 mt-4">Não possui cadastro?</p>
-        <a href="https://wa.me/message/QAJOFGIO6ILKN1" class="mt-3 flex items-center justify-center gap-2 bg-green hover:bg-green-dark text-white font-semibold py-3 rounded-md">
-          <svg class="w-5 h-5 text-white"><use href="#wa"/></svg>
-          CADASTRE-SE
-        </a>
+    <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn btn-whatsapp d-none d-md-inline-flex align-items-center gap-2 my-2">
+      <i class="bi bi-whatsapp"></i> Serviços on-line
+    </a>
+  </div>
+</div>
+
+<section class="position-relative">
+  <div class="hero-img">
+    <img src="https://images.unsplash.com/photo-1444723121867-7a241cacace9?w=1600&q=80" alt="Vista panorâmica da cidade" />
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="container service-cards-wrap">
+    <div class="row g-3">
+      <div class="col-6 col-sm-3 col-lg"><a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="service-card"><i class="bi bi-upc-scan"></i><span>Segunda Via<br>e Débito</span></a></div>
+      <div class="col-6 col-sm-3 col-lg"><a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="service-card"><i class="bi bi-lightbulb"></i><span>Falta de<br>Energia</span></a></div>
+      <div class="col-6 col-sm-3 col-lg"><a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="service-card"><i class="bi bi-file-earmark-text"></i><span>Canais de<br>Atendimento</span></a></div>
+      <div class="col-6 col-sm-3 col-lg"><a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="service-card"><i class="bi bi-credit-card"></i><span>Parcelamento<br>de Débitos</span></a></div>
+      <div class="col-6 col-sm-3 col-lg"><a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="service-card"><i class="bi bi-person"></i><span>Troca de<br>Nome da Conta</span></a></div>
+      <div class="col-6 col-sm-3 col-lg"><a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="service-card"><i class="bi bi-arrow-up-right"></i><span>Todos os<br>Serviços</span></a></div>
+      <div class="col-6 col-sm-3 col-lg"><a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="service-card"><i class="bi bi-wallet2"></i><span>Pagamentos</span></a></div>
+    </div>
+  </div>
+</section>
+
+<section class="container mt-5">
+  <div class="row g-3">
+    <div class="col-md-8">
+      <div class="highlight-dark p-4 p-md-5 rounded-4 text-white h-100">
+        <h2 class="fw-bold display-6">Segunda via da fatura na palma da sua mão</h2>
+        <p class="mt-3 text-light" style="max-width:28rem">Solicite sua 2ª via de conta de luz pelo WhatsApp em poucos minutos. Receba o boleto atualizado direto no seu celular.</p>
+        <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn btn-whatsapp mt-3 d-inline-flex align-items-center gap-2 px-4 py-2 fw-bold"><i class="bi bi-whatsapp"></i> Solicitar pelo WhatsApp</a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="bg-dark-green p-4 p-md-5 rounded-4 text-white h-100">
+        <h3 class="fw-bold">Tarifa</h3>
+        <p class="mt-2 small text-white-50">Saiba como funciona a tarifa de energia e tire suas dúvidas com o nosso atendimento.</p>
+        <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="text-success fw-bold text-decoration-none mt-3 d-inline-block">Saiba mais →</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="max-w-7xl mx-auto px-6 mt-16">
-  <h2 class="text-2xl font-bold text-green mb-6">Acesso rápido aos principais serviços</h2>
-  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-    <div class="bg-orange text-white rounded-xl p-6 shadow-md">
-      <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mb-4">
-        <svg class="w-6 h-6 text-white"><use href="#wa"/></svg>
-      </div>
-      <h3 class="font-bold text-lg mb-2">2ª Via de Pagamento</h3>
-      <p class="text-sm mb-4 text-white/90">Perdeu a fatura? Sem problemas! Solicite sua segunda via de pagamento agora.</p>
-      <a href="https://wa.me/message/QAJOFGIO6ILKN1" class="inline-flex items-center gap-2 font-semibold text-sm">
-        <svg class="w-4 h-4 text-white"><use href="#wa"/></svg> SOLICITAR
-      </a>
-    </div>
-
-    <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
-      <div class="w-12 h-12 rounded-full bg-green/10 text-green flex items-center justify-center mb-4">
-        <svg class="w-6 h-6"><use href="#wa"/></svg>
-      </div>
-      <h3 class="font-bold text-lg mb-2">Nova Solicitação</h3>
-      <p class="text-sm mb-4 text-gray-600">Agora você pode fazer sua solicitação para um novo atendimento sem precisar sair de casa.</p>
-      <a href="https://wa.me/message/QAJOFGIO6ILKN1" class="inline-flex items-center gap-2 font-semibold text-sm text-green">
-        <svg class="w-4 h-4"><use href="#wa"/></svg> SOLICITAR
-      </a>
-    </div>
-
-    <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
-      <div class="w-12 h-12 rounded-full bg-green/10 text-green flex items-center justify-center mb-4">
-        <svg class="w-6 h-6"><use href="#wa"/></svg>
-      </div>
-      <h3 class="font-bold text-lg mb-2">Troca de Titularidade</h3>
-      <p class="text-sm mb-4 text-gray-600">Realize a troca de titularidade da unidade consumidora de forma rápida e segura.</p>
-      <a href="https://wa.me/message/QAJOFGIO6ILKN1" class="inline-flex items-center gap-2 font-semibold text-sm text-green">
-        <svg class="w-4 h-4"><use href="#wa"/></svg> SOLICITAR
-      </a>
-    </div>
-
-    <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
-      <div class="w-12 h-12 rounded-full bg-green/10 text-green flex items-center justify-center mb-4">
-        <svg class="w-6 h-6"><use href="#wa"/></svg>
-      </div>
-      <h3 class="font-bold text-lg mb-2">Cadastro de Parceiros</h3>
-      <p class="text-sm mb-4 text-gray-600">Consulte o guia e descubra como é fácil cadastrar um novo parceiro.</p>
-      <a href="https://wa.me/message/QAJOFGIO6ILKN1" class="inline-flex items-center gap-2 font-semibold text-sm text-green">
-        <svg class="w-4 h-4"><use href="#wa"/></svg> SOLICITAR
-      </a>
-    </div>
+<section class="container mt-5 pt-4">
+  <h2 class="text-center fw-bold text-success-emphasis">Como pedir sua 2ª via</h2>
+  <div class="row g-3 mt-4">
+    <div class="col-md-3 col-sm-6"><div class="step-card"><div class="step-num">1</div><h3>Clique no WhatsApp</h3><p>Toque em qualquer botão verde da página.</p></div></div>
+    <div class="col-md-3 col-sm-6"><div class="step-card"><div class="step-num">2</div><h3>Informe seu CPF</h3><p>Ou número da instalação para localizarmos.</p></div></div>
+    <div class="col-md-3 col-sm-6"><div class="step-card"><div class="step-num">3</div><h3>Receba o boleto</h3><p>Em PDF, com PIX e código de barras.</p></div></div>
+    <div class="col-md-3 col-sm-6"><div class="step-card"><div class="step-num">4</div><h3>Pague onde quiser</h3><p>Banco, app, lotérica ou PIX.</p></div></div>
+  </div>
+  <div class="text-center mt-5">
+    <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg rounded-pill fw-bold px-4 py-3 d-inline-flex align-items-center gap-2 shadow"><i class="bi bi-whatsapp fs-4"></i> Falar no WhatsApp agora</a>
   </div>
 </section>
 
-<section class="max-w-7xl mx-auto px-6 mt-16 mb-20">
-  <h2 class="text-2xl font-bold text-green mb-6">Destaques</h2>
-  <div class="grid md:grid-cols-3 gap-6">
-    <article class="rounded-xl overflow-hidden shadow-sm border border-gray-200 bg-white">
-      <img src="https://distribuidoraacoelba.lovable.app/assets/card-login-Cy7UbrDQ.jpg" alt="Novo login" class="w-full h-52 object-cover"/>
-      <div class="p-5">
-        <h3 class="font-bold text-lg mb-2">Novo login, como fazer?</h3>
-        <p class="text-sm text-gray-600 mb-4">Cadastre-se e tenha acesso a todos os serviços da Agência Virtual de maneira simples pelo nosso site.</p>
-        <a href="https://wa.me/message/QAJOFGIO6ILKN1" class="text-green font-semibold text-sm">Saiba Mais →</a>
-      </div>
-    </article>
-    <article class="rounded-xl overflow-hidden shadow-sm border border-gray-200 bg-white">
-      <img src="https://distribuidoraacoelba.lovable.app/assets/card-security-CPPGfhuw.jpg" alt="Golpes" class="w-full h-52 object-cover"/>
-      <div class="p-5">
-        <h3 class="font-bold text-lg mb-2">Não caia em golpes na internet</h3>
-        <p class="text-sm text-gray-600 mb-4">Conheça os principais golpes na internet e aprenda cinco dicas práticas para não cair em fraudes digitais.</p>
-        <a href="https://wa.me/message/QAJOFGIO6ILKN1" class="text-green font-semibold text-sm">Saiba Mais →</a>
-      </div>
-    </article>
-    <article class="rounded-xl overflow-hidden shadow-sm border border-gray-200 bg-white">
-      <img src="https://distribuidoraacoelba.lovable.app/assets/card-economy-hlzRtKJh.jpg" alt="Economia" class="w-full h-52 object-cover"/>
-      <div class="p-5">
-        <h3 class="font-bold text-lg mb-2">Economia circular</h3>
-        <p class="text-sm text-gray-600 mb-4">Aprenda o que é economia circular, saiba seus princípios e entenda os benefícios das práticas econômicas a longo prazo.</p>
-        <a href="https://wa.me/message/QAJOFGIO6ILKN1" class="text-green font-semibold text-sm">Saiba Mais →</a>
-      </div>
-    </article>
+<footer class="bg-dark-green text-white-50 text-center py-4 mt-5">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-center gap-2">
+      <i class="bi bi-lightning-charge-fill text-success"></i>
+      <span class="fw-bold text-white">Agência Virtual</span>
+    </div>
+    <p class="mt-2 mb-0 small">Atendimento via WhatsApp para segunda via de fatura de energia.</p>
   </div>
-</section>
-
-<footer class="bg-green text-white py-8">
-  <div class="max-w-7xl mx-auto px-6 text-center text-sm">© 2025 Energia+. Todos os direitos reservados.</div>
 </footer>
 
-<a href="https://wa.me/message/QAJOFGIO6ILKN1" class="fixed bottom-6 right-6 bg-green hover:bg-green-dark text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg">
-  <svg class="w-7 h-7 text-white"><use href="#wa"/></svg>
-</a>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
